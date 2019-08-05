@@ -1,0 +1,24 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "t532's blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t532/blog.git"
+  },
+  "author": "t532",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/t532/blog/issues"
+  },
+  "homepage": "https://github.com/t532/blog#readme",
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.2.4",
+    "vuepress": "^1.0.0-rc.1"
+  }
+}
