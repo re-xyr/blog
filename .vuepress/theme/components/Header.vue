@@ -24,7 +24,8 @@
                 </div>
             </div>
         </div>
-        <Anchor href="/category" class="header-category">&nbsp;&equiv; categories</Anchor>
+        <Anchor href="/category" class="header-category">&nbsp;&equiv; 分类</Anchor>
+        <Anchor href="/friends" class="header-category">&nbsp;&para; 友链</Anchor>
     </div>
 </template>
 
