@@ -1,8 +1,16 @@
 <template>
     <div class="footer">
-        Built by t532 with ❤ / Powered by VuePress
+        <a href="https://github.com/t532/blog">Built by t532 with ❤</a> / 
+        <a href="https://vuepress.vuejs.org">Powered by VuePress</a>
     </div>
 </template>
+
+<style scoped>
+.footer {
+    color: gray;
+    margin-top: 2em;
+}
+</style>
 
 <script>
 export default {

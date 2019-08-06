@@ -1,0 +1,95 @@
+<template>
+    <div class="content-container">
+        <Content class="content" />
+        <div class="content-end">
+            おわり
+        </div>
+    </div>
+</template>
+
+<style>
+.content .header-anchor {
+    text-decoration: none;
+    color: #aaa !important;
+    font-weight: 100;
+}
+
+.content ul,
+.content ol {
+    padding-left: 30px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content p,
+.content ul,
+.content ol,
+.content table,
+.content blockquote,
+.content pre {
+    margin: 10px 0;
+}
+
+.content a {
+    color: #33a;
+    transition: .2s;
+    text-decoration: none;
+}
+.content a:visited { color: #a3a; }
+.content a:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+
+.content pre,
+.content code {
+    font-family: inherit;
+}
+
+:not(pre) > code {
+    background: #ddd;
+    padding: .2em .3em;
+    border-radius: 5px;
+}
+
+.content blockquote {
+    padding: .5em;
+    padding-left: 1em;
+    border-left: 5px solid #aaa;
+    color: gray;
+}
+
+.content table {
+    border-collapse: collapse;
+}
+
+.content td,
+.content th {
+    border: 1px solid #ccc;
+    padding: .5em;
+}
+
+.content thead tr,
+.content tbody tr:nth-child(2n) {
+    background: #e5e5e5;
+}
+
+.content-end {
+    font-family: sans-serif;
+    text-align: center;
+    color: gray;
+    font-size: 0.7em;
+}
+</style>
+
+
+<script>
+import 'prismjs/themes/prism-tomorrow.css'
+export default {
+    name: 'MarkdownContent',
+}
+</script>
