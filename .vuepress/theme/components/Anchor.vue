@@ -1,7 +1,7 @@
 <template>
     <a
         class="anchor"
-        :class="typeof tall === 'string' ? 'tall' : 'normal'"
+        :class="typeof tall !== 'undefined' ? 'tall' : 'normal'"
         :href="href"
     >
         <span><slot /></span>
