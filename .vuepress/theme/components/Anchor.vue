@@ -19,9 +19,10 @@
     height: 2em;
 }
 .anchor span {
-    padding-left: .5em;
+    padding-left: 1em;
 }
 .anchor.tall span {
+    padding-left: .5em;
     line-height: 2.8em;
 }
 .anchor:hover {

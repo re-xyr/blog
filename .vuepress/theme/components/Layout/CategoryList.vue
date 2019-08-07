@@ -5,7 +5,7 @@
             v-for="cat in $frontmatterKey.list"
             :href="cat.path"
         >
-            &nbsp;Category: {{ cat.name }}
+            Category: {{ cat.name }}
         </Anchor>
     </div>
 </template>

@@ -1,10 +1,8 @@
 <template>
-    <div>
     <Pagination
         :prev="typeof prev === 'string' ? prev : undefined" 
         :next="typeof next === 'string' ? next : undefined" 
     />
-    </div>
 </template>
 
 <script>

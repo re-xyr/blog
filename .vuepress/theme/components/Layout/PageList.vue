@@ -18,11 +18,26 @@
 .pagelist-item {
     border-left: 10px solid gray;
     padding-left: 5px;
-    margin: .5em;
+    margin-bottom: 2em;
+    opacity: 0.8;
+    transition: .2s;
+}
+.pagelist-item:hover {
+    opacity: 1;
+}
+.pagelist-item:nth-last-child(1) {
+    margin-bottom: 0;
+}
+.pagelist-item * {
+    line-height: 1.8em;
+}
+.pagelist-item > * {
+    padding-left: 10px;
 }
 .pagelist-item-link {
     display: block;
     margin-bottom: .5em;
+    text-decoration: none;
 }
 .pagelist-item-metadata {
     font-weight: 500;

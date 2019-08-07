@@ -30,7 +30,7 @@ category: 开发
 - 按照空格分割；
 - 将括号额外分割出来。
 
-[之前写过类似的东西](https://github.com/ionjs-dev/ionjs/blob/master/src/util/command/util.ts)，参考一下就行。
+[之前写过类似的东西](https://github.com/ionjs-dev/ionjs/blob/next/src/util/command/util.ts)，参考一下就行。
 
 我有没有提起过参数列表也是靠空格分割的？
 
