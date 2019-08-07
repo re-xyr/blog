@@ -8,6 +8,7 @@
 </template>
 
 <style>
+
 .content .header-anchor {
     text-decoration: none;
     color: #aaa !important;
@@ -32,6 +33,7 @@
 .content blockquote,
 .content pre {
     margin: 10px 0;
+    line-height: 1.8em;
 }
 
 .content a {
@@ -57,7 +59,6 @@
 }
 
 .content blockquote {
-    padding: .5em;
     padding-left: 1em;
     border-left: 5px solid #aaa;
     color: gray;
