@@ -24,8 +24,9 @@
                 </div>
             </div>
         </div>
-        <Anchor href="/category" class="header-category">&equiv; 分类</Anchor>
-        <Anchor href="/friends" class="header-category">&para; 友链</Anchor>
+        <Anchor href="/aboutme" class="header-anchor">∦ 关于我</Anchor>
+        <Anchor href="/category" class="header-anchor">≡ 分类</Anchor>
+        <Anchor href="/friends" class="header-anchor">⇋ 友链</Anchor>
     </div>
 </template>
 
@@ -70,12 +71,12 @@
 .header-projects-item:hover::before {
     width: 10em;
 }
-.header-category {
+.header-anchor {
     font-weight: bold;
     font-size: 1.2em;
 }
-.header-category,
-.header-category:hover::before {
+.header-anchor,
+.header-anchor:hover::before {
     width: 10em;
 }
 </style>
