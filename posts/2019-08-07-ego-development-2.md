@@ -49,12 +49,14 @@ Tokenizer.tokenize('a(b c(d e) f(g)) h(i)')
 
 听起来很像 hack，写出来大概像这个样子，注意单引号 `'` 是个函数：
 ```ego
-'(123)
-=> Str "123"
-'(abc def)
-=> Str "abcdef"
-'("abc def")
-=> Str "abc def"
+Pole❯ '(123)
+'123' [ type: str ref: immediate value ]
+
+Pole❯ '(abc def)
+'abcdef' [ type: str ref: immediate value ]
+
+Pole❯ '("abc def")
+'abc def' [ type: str ref: immediate value ]
 ```
 
 Tokenizer 的改动不是什么问题，随便写写就行了。
