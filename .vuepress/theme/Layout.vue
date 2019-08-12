@@ -20,7 +20,13 @@
         padding: 0;
     }
     body {
-        background: #eee;
+        background-image: url('img/theme-bg.jpg');
+        background-color: #eeee;
+        opacity: 1;
+        animation: fadein 1s;
+        background-attachment: fixed;
+        background-size: cover;
+        background-blend-mode: overlay;
         color: #111;
         font-family: 'Fira Code', Monaco, Consolas, Menlo, 'Ubuntu Mono', 'Segoe UI', 'Microsoft YaHei', sans-serif;
     }
@@ -36,6 +42,18 @@
         border-top: 1px solid gray;
         border-bottom: 1px solid gray;
         padding: 2em 0;
+    }
+    @keyframes fadein {
+        from {
+            opacity: 0;
+            background-color: #eee0;
+        } 50% {
+            opacity: 0;
+            background-color: #eee0;
+        } to {
+            opacity: 1;
+            background-color: #eeee;
+        }
     }
 </style>
 
