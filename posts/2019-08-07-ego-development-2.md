@@ -118,3 +118,5 @@ generate(['a', '(', 'b', 'c', '(', 'd', 'e', ')', 'f', '(', 'g', ')', ')', 'h', 
        target: { type: 'Identifier', name: 'h' },
        args: [ [Object] ] } ]
 ```
+
+<Series prev="/2019/08/06/ego-development-3/" />
