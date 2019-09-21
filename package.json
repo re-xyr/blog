@@ -19,6 +19,7 @@
   "homepage": "https://github.com/t532/blog#readme",
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.2.4",
+    "katex": "^0.11.1",
     "vuepress": "^1.0.0-rc.1"
   }
 }
