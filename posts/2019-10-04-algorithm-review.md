@@ -74,27 +74,37 @@ def spfa(root):
 
 ### 最小生成树（Kruskal，Prim）
 ```py
+# Kruskal 基于并查集与贪心的最小生成树算法。
+# O(m)
 def kruskal():
+    # 基于并查集实现。
     ds = DisjointSet(LEN)
+    # 按边权从小到大遍历所有边。
     sortedEdges = sorted(edges, lambda a, b: a.len < b.len)
     result = []
     for edge in sortedEdges:
+        # 如果该边加入后*会*改变连通性，则加入。
         if not ds.joined(edge.fr, edge.to):
             ds.join(edge.fr, edge.to)
             result.push(edge)
     return result
 
+# Prim 基于 Dijkstra 思想的最小生成树算法。
 def prim():
     # TODO
     pass
 ```
 
 ### 求强连通分量（Tarjan）
-请确保所有点都被放问过了。
+请确保所有点都被访问过了。
 ```py
+# 存储 DFS 的路径。
 stack = Stack()
+# 节点是否在栈中。
 instack = Array(LEN, False)
+# 已找到的强连通分量。
 scc = []
+# 请注意，需要在跑完后检查是否还有未访问过的点。
 def tarjan(root, order):
     low[root] = dfn[root] = order
     stack.push(root)
@@ -123,6 +133,7 @@ def dinic():
 
 ### 并查集
 ```py
+# 并查集：基于森林实现。
 disjointSet = []
 def resize(n):
     global disjointSet
@@ -140,6 +151,8 @@ def joined(a, b):
 
 ### 树状数组
 ```py
+# 树状数组可以实现单点加值与区间求和。
+# 改成差分可以实现单点求值与区间加值。
 def lowbit(n):
     return n & (-n)
 arr = []
@@ -173,6 +186,7 @@ def sum(length):
 
 ### 快速幂
 ```py
+# 思想：将m^n转化为m^(2^...+2^...+...+2^...)
 def fastpow(n, mod):
     result = 1
     while n:
