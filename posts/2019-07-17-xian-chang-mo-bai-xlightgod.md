@@ -3,7 +3,7 @@ title: 某个夏令营游记 P1（又名 膜拜XLightGod）
 description: 认识到了自己的弱小。
 author: t532
 date: Wed Jul 17 2019 01:28:06 GMT+0800 (GMT+08:00)
-category: 游记（OI）
+category: OI
 ---
 # 某个夏令营游记 P1（又名 膜拜XLightGod）
 
