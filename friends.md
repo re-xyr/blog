@@ -1,3 +1,6 @@
+---
+notPost: true
+---
 # 友链
 
 <Friend displayName="子不语" href="https://orzzz.org/" />

@@ -1,3 +1,6 @@
+---
+notPost: true
+---
 # 关于我
 
 **t532 (aka Trustless)**，名字毫无意义。

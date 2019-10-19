@@ -1,6 +1,23 @@
 <template>
     <div class="content-container">
-        <Content class="content" />
+        <div class="content">
+            <Content />
+            <blockquote v-if="!$page.frontmatter.notPost">
+                <p><em>｢ {{ $page.frontmatter.description }} ｣</em></p>
+                <p>
+                    ｢ <strong><em>{{ $page.frontmatter.title }}</em></strong> ｣，
+                    作者
+                    <em>{{ $page.frontmatter.author }}</em>，
+                    于
+                    {{ $page.frontmatter.date.slice(0, -12) }}
+                    在分类
+                    <a :href="`/category/${$page.frontmatter.category}`">
+                        {{ $page.frontmatter.category }}
+                    </a>
+                    下发表。
+                </p>
+            </blockquote>
+        </div>
         <div class="content-end">
             おわり
         </div>
