@@ -1,15 +1,15 @@
 ---
-title: 某个夏令营游记 P1（又名 膜拜XLightGod）
+title: 某个夏令营游记（又名 膜拜XLightGod）
 description: 认识到了自己的弱小。
 author: t532
 date: Wed Jul 17 2019 01:28:06 GMT+0800 (GMT+08:00)
 category: OI
 ---
-# 某个夏令营游记 P1（又名 膜拜XLightGod）
+# 某个夏令营游记（又名 膜拜XLightGod）
 
 ~~意识流叙事警告~~
 
-没有 P2，P3，P4，P5，不用想了
+其实不止这几天，但是懒得写了
 
 # Day 0
 ~~Day 0 本来该报到，但是因为懒所以没去~~
