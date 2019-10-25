@@ -12,7 +12,6 @@ script:
   - git init # Init temporary repo
   - git config user.email "trustq@qq.com" # Config Email
   - git config user.name "t532 via Travis CI" # Config Name
-  - echo "awaiting.me" > CNAME
   - git add * # Stage
   - git commit -m "Travis CI Automated Deploy" # Commit
   - git remote add origin-gh-pages "https://$GITHUB_TOKEN@github.com/t532/t532.github.io.git" # Add Remote
