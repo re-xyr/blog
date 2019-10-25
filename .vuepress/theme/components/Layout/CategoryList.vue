@@ -2,7 +2,7 @@
     <div class="catlist">
         <Anchor
             class="catlist-item"
-            v-for="cat in $frontmatterKey.list"
+            v-for="cat in list.sort(({ name: a }, { name: b }) => a > b ? 1 : -1)"
             :href="cat.path"
         >
             Category: {{ cat.name }}
