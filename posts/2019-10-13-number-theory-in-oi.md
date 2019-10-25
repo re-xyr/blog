@@ -3,7 +3,7 @@ title: 学数论
 description: 数论是 OI 的一部分，不爽不要玩.jpg
 author: t532
 date: Sun Oct 13 2019 21:38:03 GMT+0800 (GMT+08:00)
-category: OI
+category: OI（知识点）
 ---
 
 # 学数论

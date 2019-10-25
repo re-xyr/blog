@@ -3,7 +3,7 @@ title: CSP-J 2019 爆零记
 description: 最后一次pj，我去世
 author: t532
 date: Sat Oct 19 2019 17:29:00 GMT+0800 (GMT+08:00)
-category: OI
+category: OI（游记）
 ---
 
 # CSP-J 2019 爆零记
