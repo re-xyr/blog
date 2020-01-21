@@ -25,7 +25,7 @@ notPost: true
 
 ## 是开发者。
 
-一般使用 Node.js + TypeScript，想学 Rust。
+一般使用 Node.js + TypeScript，学了一点 Haskell 和 Idris，想学 Rust 和 Agda。
 
 Windows 10 + Ubuntu + VSCode 用户。
 
