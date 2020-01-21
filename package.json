@@ -4,7 +4,7 @@
   "description": "t532's blog",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev .",
+    "dev": "npm run build && serve .vuepress/dist",
     "build": "vuepress build ."
   },
   "repository": {

@@ -21,7 +21,7 @@
     }
     body {
         background-image: url('img/theme-bg.jpg');
-        background-color: #eeee;
+        background-color: rgba(255, 255, 255, 0.9);
         opacity: 1;
         animation: fadein 1s;
         background-attachment: fixed;

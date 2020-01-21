@@ -34,11 +34,14 @@ module.exports = {
     markdown: {
         extendMarkdown(md) {
             md.render = (src, env) => {
-                return MarkdownIt.prototype.render.call(md, src, env)
+                return MarkdownIt.prototype.render.call(
+                    md,
+                    src
                     .replace(/\$\$(.+?)\$\$/g, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: true }))
                     .replace(/\$(.+?)\$/g, (_, str) =>
-                        Katex.renderToString(str, { throwOnError: false, displayMode: false }))
+                        Katex.renderToString(str, { throwOnError: false, displayMode: false })),
+                    env)
             }
         },
     },
