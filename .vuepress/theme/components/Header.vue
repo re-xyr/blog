@@ -17,13 +17,6 @@
                     class="header-accounts-item"
                 >{{ acc[0] }}</Anchor>
             </div>
-            <div class="header-projects">
-                <Anchor
-                    v-for="acc in Object.entries(aboutme.projects)"
-                    :href="acc[1]" 
-                    class="header-projects-item"
-                >{{ acc[0] }}</Anchor>
-            </div>
         </div>
         <Anchor href="/aboutme" class="header-anchor">∦ 关于我</Anchor>
         <Anchor href="/category" class="header-anchor">≡ 分类</Anchor>
