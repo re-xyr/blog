@@ -144,7 +144,7 @@ $$\operatorname{xor} = \lambda xy. \operatorname{and}(\operatorname{not}(\operat
 **代码 a5.**
 ```haskell
 cxor :: Cbool a -> Cbool a -> Cbool a
-cor x y = x (cnot y) y
+cxor x y = x (cnot y) y
 ```
 
 ## Church Number
@@ -214,7 +214,7 @@ cadd x y s z = x s (y s z)
 **定义 b4. Church Number 的乘法**
 
 $$ \operatorname{mul} = \lambda xy. \lambda sz. x(\lambda n. ysn)z = \lambda xy. \lambda s. x(ys)z $$
-这里，$x$ 的“后继关系”从“加 $1$”变味了“加 $y$”，应用了 $x$ 遍，结果是 $y \cdot x$ 而非 $1 \cdot x$。
+这里，$x$ 的“后继关系”从“加 $1$”变为了“加 $y$”，应用了 $x$ 遍，结果是 $y \cdot x$ 而非 $1 \cdot x$。
 
 **代码 b4.**
 ```haskell
@@ -276,7 +276,9 @@ $$ C_2 \circ C_2 \circ C_2 $$
 
 归约一下看看，就会发现我们的思路是正确的：
 
-$$ (C_2 \circ C_2 \circ C_2)(\lambda z. z^+)0 $$
+$$ C_2 ^ {C_3} (\lambda z. z^+)0 $$
+$$ = C_3 C_2 (\lambda z. z^+)0 $$
+$$ = (C_2 \circ C_2 \circ C_2)(\lambda z. z^+)0 $$
 $$ = (C_2(C_2(C_2(\lambda z. z^+))))0 $$
 $$ = (C_2(C_2(\lambda z. z^{++})))0 $$
 $$ = (C_2(\lambda z. z^{++++}) ))0 $$
