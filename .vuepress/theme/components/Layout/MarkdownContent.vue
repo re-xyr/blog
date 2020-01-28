@@ -3,7 +3,6 @@
         <div class="content">
             <Content />
             <blockquote v-if="!$page.frontmatter.notPost">
-                <p><em>｢ {{ $page.frontmatter.description }} ｣</em></p>
                 <p>
                     ｢ <strong><em>{{ $page.frontmatter.title }}</em></strong> ｣，
                     作者

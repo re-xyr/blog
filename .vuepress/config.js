@@ -1,5 +1,22 @@
 const MarkdownIt = require('markdown-it')
 const Katex = require('katex')
+const directives = {
+    AUTOBREAK: str =>
+        str.replace(/\n/g, "  \n"),
+    INDENTSYM: str =>
+        str.replace(/^(\/+)/mg, str =>
+            str.replace(/\//g, "&nbsp;&nbsp;&nbsp;&nbsp;"))
+}
+const runDirectives = str => {
+    const match = str
+    .match(/<!-- (.+?) -->$/)
+    if (match) {
+        match[1]
+        .split(', ')
+        .forEach(dir => str = directives[dir](str))
+    }
+    return str
+}
 module.exports = {
     title: 't532\'s blog',
     description: 'Deadline is motivation',
@@ -33,16 +50,15 @@ module.exports = {
     ],
     markdown: {
         extendMarkdown(md) {
-            md.render = (src, env) => {
-                return MarkdownIt.prototype.render.call(
+            md.render = (src, env) =>
+                MarkdownIt.prototype.render.call(
                     md,
-                    src
+                    runDirectives(src)
                     .replace(/\$\$(.+?)\$\$/g, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: true }))
                     .replace(/\$(.+?)\$/g, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: false })),
                     env)
-            }
         },
     },
 }
