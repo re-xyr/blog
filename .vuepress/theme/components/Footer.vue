@@ -2,7 +2,8 @@
     <div class="footer">
         <a href="https://github.com/t532/blog">Built by t532 with ❤</a> / 
         <a href="https://vuepress.vuejs.org">Powered by VuePress</a> /
-        Distributed under MIT License.
+        Distributed under
+        <a href="/LICENSE">2-Section Website Public License.</a>
     </div>
 </template>
 

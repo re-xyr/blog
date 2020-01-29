@@ -20,8 +20,9 @@
         padding: 0;
     }
     body {
+        /* ATTENTION: This background image ("the Image") is an original artwork by 望月しいな/Mochizuki Shiina ("the Illustrator") (see https://www.pixiv.net/artworks/78398601), and an inference has been made that all rights of the Image are reserved by the Illustrator (as no copyright declaration could be found), so the use of the Image may lead to a copyright violation. Thus, the Image shall be taken down whenever the Illustrator requests to. */
         background-image: url('img/theme-bg.jpg');
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.85);
         opacity: 1;
         animation: fadein 1s;
         background-attachment: fixed;
