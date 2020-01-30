@@ -10,10 +10,11 @@ category: FP
 
 不是非常严谨，不是形式化表述。刚开始学，持续更新。
 
-> 前置知识：集合论基本概念、群论基本概念、基础 Haskell、小学数学
-> 
-> 函数应用不加括号，即 $fx = f(x)$。
-> 有时候通过问号 $?$ 标记 Holes。
+我的抽象思维非常差，所以例子基本上都举在 $\bf Set$ 上。
+
+前置知识：集合论基本概念、群论基本概念、基础 Haskell、小学数学。
+
+函数应用不加括号，即 $fx = f(x)$。有时候通过问号 $?$ 标记 Holes。
 
 > **参考**
 > 
@@ -80,14 +81,6 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 恒等态射是一个平凡的自同构（后面会看到）。
 
-## 始物件（Initial Object）和终物件（Terminal Object）
-
-一个范畴内的始物件 $S$ 可以近似理解为图的一个超级源点。定义上，从 $S$ 到范畴的所有物件有且仅有一个态射。一个范畴内的始物件是唯一的，但不一定存在（为什么）。
-
-一个范畴内的终物件 $T$ 可以近似理解为图的一个超级汇点。定义上，从范畴的所有物件到 $T$ 有且仅有一个态射。一个范畴内的终物件是唯一的，但不一定存在。
-
-这两个概念互为对偶，也就是（不严谨地）它们在同构意义上相等。
-
 ## 同构（Isomorphism）
 
 同构（Isomorphism）是一组态射 $\lang f: X \to Y, g: Y \to X \rang$，满足 $g \circ f = {\rm id}_X$ 且 $f \circ g = {\rm id}_Y$。
@@ -98,15 +91,35 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 同构是相等关系的推广。
 
-## 积（Product）与余积（Coproduct）
+## 泛构造（Universal Construction）
+
+泛构造是一类同构下唯一（但不一定存在）的构造，它们拥有的性质叫做泛性质。
+
+### 始物件（Initial Object）和终物件（Terminal Object）
+
+一个范畴内的始物件 $S$ 可以近似理解为图的一个超级源点。定义上，从 $S$ 到范畴的所有物件有且仅有一个态射。一个范畴内的始物件是唯一的，但不一定存在（为什么）。
+
+一个范畴内的终物件 $T$ 可以近似理解为图的一个超级汇点。定义上，从范畴的所有物件到 $T$ 有且仅有一个态射。一个范畴内的终物件是唯一的，但不一定存在。
+
+这两个概念互为对偶，也就是（不严谨地）它们在同构意义上相等。
+
+### 积（Product）与余积（Coproduct）
 
 一个范畴里，任意两个物件 $A$、$B$ 的积是这样一个物件 $A \times B$，存在 $f: A \times B \to A$、$g: A \times B \to B$ 使得对于其他任何物件 $C$ 存在 $p: C \to A$、$q: C\to B$，总有态射 $m: C \to A \times B$ 使得 $p = m \circ f$、$q = m \circ g$。
 
-代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的积是它们的 Cartesian 积 $A \times B$（想一想，为什么），它包含了所有有序对 $\lang A, B \rang$ 当 $a \in A$、$b \in B$。
+代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的积是它们的笛卡尔积（Cartesian product） $A \times B$（想一想，为什么），它包含了所有有序对 $\lang A, B \rang$ 当 $a \in A$、$b \in B$。
 
 一个范畴里，任意两个物件 $A$、$B$ 的余积（或称作范畴意义下的和，categorical sum）是这样一个物件 $A \oplus B$（或记作 $A \coprod B$)，存在 $f: A \to A \oplus B$、$g: B \to A \oplus B$ 使得对于其他任何物件 $C$ 存在 $p: A \to C$、$q: B \to C$，总有态射 $n: A \oplus B \to C$ 使得 $p = f \circ n$、$q = g \circ n$。
 
 代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的余积是它们的并 $A \cup B$（想一想，为什么）。
+
+### 函数物件（Function Object）
+
+> 注意：这个构造是 Milewski 在 CTfP 里提出来的，我不知道这不是不是一个广泛应用的泛构造。
+
+两个物件 $A$、$B$ 的函数物件是这样一个物件 $A \Rightarrow B$ ，它有一个态射 ${\rm eval}: (A \Rightarrow B) \times A \to B$ 使得对于其他形如 $f: F \times A \to B$ 的态射，均有态射 $m: F \to (A \Rightarrow B)$，使得 $f = {\rm eval} \circ (m \times {\rm id}_A)$。
+
+在 $\bf Set$ 里，这个物件总是存在，它就是 ${\bf Set}AB$（为什么？尝试把 $\bf Hask$ 代入到 $\bf Set$ 想一想）。
 
 ## 幺半范畴（Monoidal Category）
 
@@ -139,7 +152,7 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 ### 双函子（Bifunctor）
 
-双函子是函子的一个特殊情况。它是这样一个函子 $G: \mathcal A \times \mathcal B \to \mathcal C$，也就是说它将两个范畴的 Cartesian 积映射到一个范畴。
+双函子是函子的一个特殊情况。它是这样一个函子 $G: \mathcal A \times \mathcal B \to \mathcal C$，也就是说它将两个范畴的笛卡尔积映射到一个范畴。
 
 双函子将**一对**物件或态射映射到一个物件或态射。
 
@@ -161,7 +174,7 @@ Profunctor 是这样一个双函子 $F: \mathcal C^{op} \times \mathcal D \to {\
 
 ### Hom- 函子
 
-对于范畴 $\mathcal C$，${\rm Hom}_{\mathcal C}$ 其实是一个 $\mathcal C \times \mathcal C$ 上的 profunctor（即函子 $F: \mathcal C^{op} \times \mathcal C \to \bf Set$）。
+对于范畴 $\mathcal C$，${\rm hom}_{\mathcal C}$ 其实是一个 $\mathcal C \times \mathcal C$ 上的 profunctor（即函子 $F: \mathcal C^{op} \times \mathcal C \to \bf Set$）。
 
 对于一对对象 $\lang A, B \rang$，我们已经看到，$\mathcal C\lang A, B \rang$ 射向 $\bf Set$ 中所有 $f: A \to B$ 的集合。
 
@@ -193,6 +206,52 @@ instance Functor (Const a) where
 在 Haskell 中，`(->)` 就是一个 Profunctor（想一想，为什么）。
 
 双函子、逆变函子和 profunctor 在 `base` 库中有实现，它们分别位于 `Data.Bifunctor`、`Data.Functor.Contravariant` 与 `Data.Profunctor`。
+
+## 对 Algebraic Data Types 的理解
+
+### 加法 `(? a | ? b)`
+
+```haskell
+data Add a b = First a | Second b
+```
+
+这个类型里面存的值的类型要么是 `a` 要么是 `b`，也就是说是它们俩的并。这是加法。
+
+### 乘法 `(? a b)`
+
+```haskell
+newtype Mult a b = Mult a b
+```
+
+这个类型里面存的是一个 `a` 和一个 `b`。可以看出来它是两个集合的笛卡尔积。这是乘法。
+
+### 幂 `(a -> b)`
+
+```haskell
+type Exp a b = a -> b
+```
+
+这样想：一个（纯）函数又是一张从 `a` 映射到 `b` 的表。它的长度是 `a` 的集合大小，每个取值可以取 `b` 的任何值。算一下就知道，一共有 $b^a$ 张表。这是幂。
+
+## 笛卡尔闭范畴（Cartesian Closed Category）
+
+笛卡尔闭范畴是简单类型（Simply typed）λ- 演算的重要基础。
+
+一个笛卡尔闭范畴：
+
+- 有终物件；
+- 对任何两个物件 $X$、$Y$，它们的积 $X \times Y$ 也在范畴内；
+- 对任何两个物件 $X$、$Y$，它们的幂 $Y^X$ 也在范畴内。
+
+$\bf Set$ 就是一个笛卡尔闭范畴。我们可以看到：
+
+- 它的终物件就是仅有一个元素的集合 $\mathbb S$；
+- 对任何两个物件 $X$、$Y$，它们的积就是笛卡尔积。
+- 对任何两个物件 $X$、$Y$，它们的幂就是 ${\bf Set}XY$。
+
+### 双笛卡尔（Bicartesian）闭范畴
+
+一些笛卡尔闭范畴是双笛卡尔闭范畴，它们支持类似乘法分配律和交换律的运算，乘法是求积，加法是求余积，即，对于任何物件 $A$、$B$、$C$，有 $A \times (B \oplus C) = A \times B \oplus A \times C$。$\bf Set$ 就是一个双笛卡尔闭范畴。
 
 ## 自然变换（Natural Transformation）
 
