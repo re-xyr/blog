@@ -113,11 +113,11 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的余积是它们的并 $A \cup B$（想一想，为什么）。
 
-### 函数物件（Function Object）
+### 幂（Exponential Object）
 
-> 注意：这个构造是 Milewski 在 CTfP 里提出来的，我不知道这不是不是一个广泛应用的泛构造。
+> 注意：Milewski 在 CTfP 里把这个泛构造叫做函数物件（Function Object），我不知道这不是不是一个广泛应用的名字。
 
-两个物件 $A$、$B$ 的函数物件是这样一个物件 $A \Rightarrow B$ ，它有一个态射 ${\rm eval}: (A \Rightarrow B) \times A \to B$ 使得对于其他形如 $f: F \times A \to B$ 的态射，均有态射 $m: F \to (A \Rightarrow B)$，使得 $f = {\rm eval} \circ (m \times {\rm id}_A)$。
+两个物件 $A$、$B$ 的幂是这样一个物件 $B^A$ ，它有一个态射 ${\rm eval}: B^A \times A \to B$ 使得对于其他形如 $f: F \times A \to B$ 的态射，均有态射 $m: F \to B ^ A$，使得 $f = {\rm eval} \circ (m \times {\rm id}_A)$。
 
 在 $\bf Set$ 里，这个物件总是存在，它就是 ${\bf Set}AB$（为什么？尝试把 $\bf Hask$ 代入到 $\bf Set$ 想一想）。
 
@@ -207,6 +207,28 @@ instance Functor (Const a) where
 
 双函子、逆变函子和 profunctor 在 `base` 库中有实现，它们分别位于 `Data.Bifunctor`、`Data.Functor.Contravariant` 与 `Data.Profunctor`。
 
+## 笛卡尔闭范畴（Cartesian Closed Category）
+
+笛卡尔闭范畴是简单类型（Simply typed）λ- 演算的重要基础。
+
+一个笛卡尔闭范畴：
+
+- 有终物件；
+- 对任何两个物件 $X$、$Y$，它们的积 $X \times Y$ 也在范畴内；
+- 对任何两个物件 $X$、$Y$，它们的幂 $Y^X$ 也在范畴内。
+
+$\bf Set$ 就是一个笛卡尔闭范畴。我们可以看到：
+
+- 它的终物件就是仅有一个元素的集合 $\mathbb S$；
+- 对任何两个物件 $X$、$Y$，它们的积就是笛卡尔积。
+- 对任何两个物件 $X$、$Y$，它们的幂就是 ${\bf Set}XY$。
+
+### 双笛卡尔（Bicartesian）闭范畴
+
+一些笛卡尔闭范畴是双笛卡尔闭范畴，它们支持类似乘法分配律和交换律的运算，乘法是求积，加法是求余积，即，对于任何物件 $A$、$B$、$C$，有 $A \times (B \oplus C) = A \times B \oplus A \times C$。$\bf Set$ 就是一个双笛卡尔闭范畴。
+
+双笛卡尔闭范畴在幂上有一些很有趣的性质，我们一会会看到。
+
 ## 对 Algebraic Data Types 的理解
 
 ### 加法 `(? a | ? b)`
@@ -233,27 +255,55 @@ type Exp a b = a -> b
 
 这样想：一个（纯）函数又是一张从 `a` 映射到 `b` 的表。它的长度是 `a` 的集合大小，每个取值可以取 `b` 的任何值。算一下就知道，一共有 $b^a$ 张表。这是幂。
 
-## 笛卡尔闭范畴（Cartesian Closed Category）
+下面有一些性质，它们不仅应用到 $\bf Hask$（或 $\bf Set$），也应用到所有双笛卡尔闭范畴。
 
-笛卡尔闭范畴是简单类型（Simply typed）λ- 演算的重要基础。
+#### 0 为指数
 
-一个笛卡尔闭范畴：
+考虑算术中的 $a^0 = 1$，其中 $a$ 为任意值。
 
-- 有终物件；
-- 对任何两个物件 $X$、$Y$，它们的积 $X \times Y$ 也在范畴内；
-- 对任何两个物件 $X$、$Y$，它们的幂 $Y^X$ 也在范畴内。
+在 $\bf Set$ 中，我们已经看到，$0$ 代表 $\varnothing$，$1$ 代表 $\mathbb S$。这说明了，`Void -> a` 与 `()` 同构，也就是说只能有一个，就是 `absurd`。
 
-$\bf Set$ 就是一个笛卡尔闭范畴。我们可以看到：
+#### 1 为底数
 
-- 它的终物件就是仅有一个元素的集合 $\mathbb S$；
-- 对任何两个物件 $X$、$Y$，它们的积就是笛卡尔积。
-- 对任何两个物件 $X$、$Y$，它们的幂就是 ${\bf Set}XY$。
+考虑算术中的 $1^a = 1$，其中 $a$ 为任意值。这说明了，`a -> ()` 与 `()` 同构，也就是说该函数只有一个，就是 `const ()`。
 
-### 双笛卡尔（Bicartesian）闭范畴
+#### 1 为指数
 
-一些笛卡尔闭范畴是双笛卡尔闭范畴，它们支持类似乘法分配律和交换律的运算，乘法是求积，加法是求余积，即，对于任何物件 $A$、$B$、$C$，有 $A \times (B \oplus C) = A \times B \oplus A \times C$。$\bf Set$ 就是一个双笛卡尔闭范畴。
+考虑算术中的 $a^1 = a$，其中 $a$ 为任意值。这说明了 `() -> a` 与 `a` 同构。要构建前者，可以使用  `const ?value_of_type_a`。
+
+#### 指数为和
+
+考虑算术中的 $a^{b+c} = a^b \times a^c$，其中 $a$、$b$ 和 $c$ 为任意值。这说明了，`Either b c -> a` 与 `(b -> a, c -> a)` 同构（因为对于前者要处理两种情况，所以在某种意义上相当于两个函数）。
+
+#### 幂的幂
+
+考虑算术中的 $(a^b)^c = a^{b \times c}$。这说明 `c -> b -> a` 与 `(c, b) -> a` 同构——这是柯里化。
+
+#### 分配律
+
+考虑 $(a \times b)^c = a^c \times b^c$。这说明 `c -> (a, b)` 与 `(c -> b, c -> a)` 同构，这很好理解。
+
+## 柯里-霍华德同构（Curry-Howard Isomorphism）
+
+柯里-霍华德同构（或称对应），是指“命题即类型，程序即证明”；更准确地说：
+
+- `Void` 与 $\bot$ 同构，
+- `()` 与 $\top$ 同构，
+- `(,)` 与 $\land$ 同构，
+- `Either` 与 $\lor$ 同构，
+- `(->)` 与 $\to$ 同构。
+
+而组合出的一个类型就相当于一个命题。若这个类型有一个值（即与 `()` 同构）则命题为真，否则（与 `Void` 同构）则为假。
+
+考虑一个类型的例子：`(a -> b, a) -> b`（这就是没有柯里化的 $\rm eval$）。转换成逻辑符号，就是 $((A \to B) \land A) \to B$，这是很显然的。这个命题的拉丁文名称是 *modus ponens（真命题模式）*。
+
+接下来是一个假命题的例子：$A \lor B \to A$。转换成类型，它就是 `Either a b -> a`，显然这个函数不可能是全域函数。
+
+我们之前看到了一个函数 `absurd :: Void -> a`，它转换为命题就是 $\bot \to A$。这个命题就是 *ex falso quodlibet（从错误的结论什么都能推出）*。它是一个真命题，所以存在 `absurd`。
 
 ## 自然变换（Natural Transformation）
+
+先来从另外一个方面理解一下函子。
 
 ## 单子（Monad）
 
