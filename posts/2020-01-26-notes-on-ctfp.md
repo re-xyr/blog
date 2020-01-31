@@ -3,7 +3,10 @@ title: 学范畴论（或许吧）
 description: 学不会的
 author: t532
 date: Sun Jan 26 2020 19:38:09 GMT+0800 (GMT+08:00)
-category: FP
+category:
+    - FP
+    - 数学
+    - 新知
 ---
 
 # 学范畴论（或许吧）
@@ -336,7 +339,7 @@ $$ \eta_B = Gf \circ \eta_A \circ (Ff)^{-1}. $$
 eta :: F a -> G a
 ```
 
-在 Haskell 中，任何签名是这样的函数都自动满足自然变换的条件。也就是说，任何一个这样的函数都是一个自然变换 $\eta: F \Rightarrow G$。这是由于 Haskell 的泛型函数是“参数多态（parametric polymorphism）”而非“特定多态（ad hoc polymorphism）”（typeclass 中定义的除外，它们是特定多态；C++函数同时支持两种，其中“特定多态”又叫做“模板特化”）而带来的；它们对于所有类型都应用同一个表达式。
+在 Haskell 中，任何签名是这样的函数都自动满足自然变换的条件。也就是说，任何一个这样的函数都是一个自然变换 $\eta: F \Rightarrow G$。这是由于 Haskell 的泛型函数是“参数多态（parametric polymorphism）”而非“特定多态（ad hoc polymorphism）”（typeclass 中定义的除外，它们是特定多态；C++函数同时支持两种，其中特定多态可以通过函数重载或模板特化实现）而带来的；它们对于所有类型都应用同一个表达式。
 
 > 来感性理解一下。在 Haskell 中，自然变换条件
 > 
@@ -349,6 +352,35 @@ eta :: F a -> G a
 > ```
 > 
 > 在你很久之前看过的“图解 Monad”（那篇文章很带有误解性，但是某种意义上能帮助理解）中，它提到了 Functor 是一种“容器”；那么在这里，我们“先更改容器里的东西，再更换容器”和“先更换容器，再更改容器里的东西”是一个意思。——它们理应是一个意思，不然 $F$ 和 $G$ 就不配叫函子。
+
+### 米田<span style="color: black; background-color: black;">共</span>引理（よねだのほだい、Yoneda Lemma）
+
+米田引理显示，对于任何物件 $A$，自然变换（即态射集合） $\alpha:\ ?^A \Rightarrow F$ 与 $FA$ （一个物件，在 $\bf Hask$ 下也是个集合）同构。
+
+来看一个 Haskell 例子。我们先定义一个 `Reader a` 函子：
+
+```haskell
+newtype Reader a b = Reader (a -> b)
+instance Functor Reader a where
+    fmap f g = f . g
+```
+
+那么，`Reader () a` 和 `a` 是同构的。
+
+接下来我们定义这样一个自然变换：
+
+```haskell
+alpha :: Reader () a -> Maybe a
+```
+
+它只有两个可能的实现：
+
+```haskell
+alpha = const Nothing
+alpha = Just . (() &)
+```
+
+我们这里有两个自然变换，刚好 `Maybe ()` 的两个可能的值对应：`Just ()` 和 `Nothing`。
 
 ## 单子（Monad）
 
