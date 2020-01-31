@@ -3,7 +3,9 @@ title: 二次剩余（数论）
 description: 其实没学会，只是记一下
 author: t532
 date: Sun Oct 14 2019 21:38:03 GMT+0800 (GMT+08:00)
-category: OI（知识点）
+category:
+    - OI
+    - 新知
 ---
 
 # 二次剩余

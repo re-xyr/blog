@@ -44,7 +44,9 @@ module.exports = {
                         path: '/category/',
                         layout: 'FrontmatterIndex',
                     },
-                ],
+                ], feed: {
+                    canonical_base: 'https://t532.github.io',
+                },
             },
         ],
     ],

@@ -3,7 +3,9 @@ title: 【题解】青蛙的约会 / Exgcd
 description: Ref:LuoguOJ/P1516
 author: t532
 date: Sat Oct 26 2019 01:09:06 GMT+0800 (GMT+08:00)
-category: OI（题解）
+category:
+    - OI
+    - 题解
 ---
 
 # P1516 青蛙的约会 题解

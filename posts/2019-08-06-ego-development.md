@@ -3,7 +3,8 @@ title: 造个语言：Egolang
 description: 闲着没事想要造个（程序设计）语言。
 author: t532
 date: Tue Aug 06 2019 21:02:43 GMT+0800 (GMT+08:00)
-category: 开发
+category:
+    - 开发
 ---
 
 # 造个语言：Egolang

@@ -3,7 +3,10 @@ title: Church 编码
 description: Church 编码是一种基于 λ- 演算的抽象方法。
 author: t532
 date: Tue Jan 21 2020 18:38:32 GMT+0800 (GMT+08:00)
-category: FP
+category:
+    - FP
+    - 数学
+    - 新知
 ---
 
 # Church 编码
@@ -23,7 +26,7 @@ Church 布尔代数通过 Church 编码抽象了标准布尔代数，我们可�
 **公理 a1. 布尔值的集合**
 $$ \mathbb{B} = \{ \top , \bot \} $$
 
-其中 $ \top $ 为逻辑真，$ \bot $ 为逻辑假。
+其中 $\top$ 为逻辑真，$\bot$ 为逻辑假。
 
 在 Church 布尔代数中，它们将会如此表示：
 
@@ -33,13 +36,13 @@ $$ \operatorname{false} = \lambda tf.f $$
 
 可以认为 $t$ 与 $f$ 分别代表了抽象的逻辑真与逻辑假。
 
-令 $ t := \top , f := \bot $，即将标准布尔代数的基本单位应用于 Church 布尔值后，其归约为（我们所想得到的）标准布尔代数值 - 这展示了标准布尔值和 Church 布尔值之间的关系：
+令 $t := \top , f := \bot$，即将标准布尔代数的基本单位应用于 Church 布尔值后，其归约为（我们所想得到的）标准布尔代数值 - 这展示了标准布尔值和 Church 布尔值之间的关系：
 
 $$ \operatorname{true} \top \bot = \top $$
 $$ \operatorname{false} \top \bot = \bot $$
 
-在 Church 布尔代数中，`if-then-else`（或 3- 元算子 `?:`）变得极其显然：
-$$ \operatorname{if-then-else} = \lambda ite.ite $$
+在 Church 布尔代数中，`if-then-else`（或 3- 元算子 `?:`）变得极其显然，乃至不需要：
+$$ \operatorname{if-then-else} = \lambda ite.ite = \lambda i.i = \operatorname{id} $$
 
 **代码 a1.**
 ```haskell

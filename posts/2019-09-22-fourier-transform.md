@@ -3,7 +3,9 @@ title: 函数频谱与傅里叶变换
 description: 无话可说。
 author: t532
 date: Sun Sep 22 2019 03:22:18 GMT+0800 (GMT+08:00)
-category: 数学
+category:
+    - 数学
+    - 新知
 ---
 
 # 函数频谱与傅里叶变换

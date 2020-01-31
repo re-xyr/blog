@@ -8,7 +8,11 @@
             <div class="pagelist-item-metadata">
                 <span class="pagelist-item-metadata-author">{{ page.frontmatter.author }}</span>
                 <span class="pagelist-item-metadata-date">{{ new Date(page.frontmatter.date).toLocaleDateString() }}</span>
-                <a :href="`/category/${page.frontmatter.category}`" class="pagelist-item-metadata-category">{{ page.frontmatter.category }}</a>
+                <span class="pagelist-item-metadata-category">
+                    <span class="pagelist-item-metadata-category-item" v-for="cat in page.frontmatter.category">
+                        <a :href="`/category/${cat}`">[ {{ cat }} ]</a>
+                    </span>
+                </span>
             </div>
         </div>
     </div>
@@ -52,6 +56,9 @@
 .pagelist-item-metadata-category::before {
     content: ' 分类 ';
     color: gray;
+}
+.pagelist-item-metadata-category-item {
+    padding-right: .5em;
 }
 </style>
 

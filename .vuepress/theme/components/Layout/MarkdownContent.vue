@@ -10,9 +10,9 @@
                     于
                     {{ $page.frontmatter.date.slice(0, -12) }}
                     在分类
-                    <a :href="`/category/${$page.frontmatter.category}`">
-                        {{ $page.frontmatter.category }}
-                    </a>
+                    <span v-for="cat in $page.frontmatter.category" class="content-footerlink">
+                        <a :href="`/category/${cat}`">[ {{ cat }} ]</a>
+                    </span>
                     下发表。
                 </p>
             </blockquote>
@@ -100,6 +100,10 @@
     text-align: center;
     color: gray;
     font-size: 0.7em;
+}
+
+.content-footerlink {
+    padding-right: .5em;
 }
 </style>
 
