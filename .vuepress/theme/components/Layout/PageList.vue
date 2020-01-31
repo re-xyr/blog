@@ -1,6 +1,6 @@
 <template>
     <div class="pagelist">
-        <div class="pagelist-item" v-for="page in pages">
+        <div class="pagelist-item" v-for="page in pages" v-if="!page.frontmatter.hidden">
             <a :href="page.path" class="pagelist-item-link">
                 <h2 class="pagelist-item-title">{{ page.frontmatter.title }}</h2>
                 <div class="pagelist-item-desc">{{ page.frontmatter.description }}</div>
