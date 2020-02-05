@@ -26,6 +26,7 @@
         opacity: 1;
         animation: fadein 1s;
         background-attachment: fixed;
+        background-position: 25%;
         background-size: cover;
         background-blend-mode: overlay;
         color: #111;
