@@ -27,6 +27,7 @@
 <style scoped>
 .header {
     margin-bottom: 2em;
+    font-family: 'Fira Code', 'Fira Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 .header-main {
     position: relative;

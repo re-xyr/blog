@@ -13,7 +13,8 @@ description:
 author: t532
 date: ${date.toString()}
 category:
-    - 未分类
+    - Special:未分类
+    - Special:未发布
 hidden: true # delete this before publishing
 ---
 

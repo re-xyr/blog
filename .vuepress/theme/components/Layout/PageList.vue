@@ -9,7 +9,10 @@
                 <span class="pagelist-item-metadata-author">{{ page.frontmatter.author }}</span>
                 <span class="pagelist-item-metadata-date">{{ new Date(page.frontmatter.date).toLocaleDateString() }}</span>
                 <span class="pagelist-item-metadata-category">
-                    <span class="pagelist-item-metadata-category-item" v-for="cat in page.frontmatter.category">
+                    <span
+                        class="pagelist-item-metadata-category-item"
+                        v-for="cat in page.frontmatter.category"
+                        v-if="!/.+:/.test(cat)">
                         <a :href="`/category/${cat}`">[ {{ cat }} ]</a>
                     </span>
                 </span>

@@ -5,6 +5,7 @@ author: t532
 date: Tue Aug 06 2019 21:02:43 GMT+0800 (GMT+08:00)
 category:
     - 开发
+    - Stat:搁置
 ---
 
 # 造个语言：Egolang

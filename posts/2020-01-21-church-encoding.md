@@ -4,7 +4,7 @@ description: Church 编码是一种基于 λ- 演算的抽象方法。
 author: t532
 date: Tue Jan 21 2020 18:38:32 GMT+0800 (GMT+08:00)
 category:
-    - FP
+    - 函数式
     - 数学
     - 新知
 ---
@@ -216,7 +216,7 @@ cadd x y s z = x s (y s z)
 
 **定义 b4. Church Number 的乘法**
 
-$$ \operatorname{mul} = \lambda xy. \lambda sz. x(\lambda n. ysn)z = \lambda xy. \lambda s. x(ys)z $$
+$$ \operatorname{mul} = \lambda xy. \lambda sz. x(\lambda n. ysn)z = \lambda xy. \lambda s. x(ys) $$
 这里，$x$ 的“后继关系”从“加 $1$”变为了“加 $y$”，应用了 $x$ 遍，结果是 $y \cdot x$ 而非 $1 \cdot x$。
 
 **代码 b4.**

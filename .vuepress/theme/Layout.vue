@@ -30,7 +30,7 @@
         background-size: cover;
         background-blend-mode: overlay;
         color: #111;
-        font-family: 'Fira Code', Monaco, Consolas, Menlo, 'Ubuntu Mono', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
     }
     a {
         color: inherit;

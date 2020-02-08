@@ -4,9 +4,10 @@ description: 学不会的
 author: t532
 date: Sun Jan 26 2020 19:38:09 GMT+0800 (GMT+08:00)
 category:
-    - FP
+    - 函数式
     - 数学
     - 新知
+    - Stat:未完成
 ---
 
 # 学范畴论（或许吧）
@@ -110,7 +111,7 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 一个范畴里，任意两个物件 $A$、$B$ 的积是这样一个物件 $A \times B$，存在 $f: A \times B \to A$、$g: A \times B \to B$ 使得对于其他任何物件 $C$ 存在 $p: C \to A$、$q: C\to B$，总有态射 $m: C \to A \times B$ 使得 $p = m \circ f$、$q = m \circ g$。
 
-代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的积是它们的笛卡尔积（Cartesian product） $A \times B$（想一想，为什么），它包含了所有有序对 $\lang A, B \rang$ 当 $a \in A$、$b \in B$。
+代入 ${\bf Set}$ 去理解，任意两个集合 $A$、$B$ 的积是它们的 Cartesian 积（Cartesian product） $A \times B$（想一想，为什么），它包含了所有有序对 $\lang A, B \rang$ 当 $a \in A$、$b \in B$。
 
 一个范畴里，任意两个物件 $A$、$B$ 的余积（或称作范畴意义下的和，categorical sum）是这样一个物件 $A \oplus B$（或记作 $A \coprod B$)，存在 $f: A \to A \oplus B$、$g: B \to A \oplus B$ 使得对于其他任何物件 $C$ 存在 $p: A \to C$、$q: B \to C$，总有态射 $n: A \oplus B \to C$ 使得 $p = f \circ n$、$q = g \circ n$。
 
@@ -155,7 +156,7 @@ ${\bf Hask}$ 不是一个真正的范畴，但在许多情况下可以当作真�
 
 ### 双函子（Bifunctor）
 
-双函子是函子的一个特殊情况。它是这样一个函子 $G: \mathcal A \times \mathcal B \to \mathcal C$，也就是说它将两个范畴的笛卡尔积映射到一个范畴。
+双函子是函子的一个特殊情况。它是这样一个函子 $G: \mathcal A \times \mathcal B \to \mathcal C$，也就是说它将两个范畴的 Cartesian 积映射到一个范畴。
 
 双函子将**一对**物件或态射映射到一个物件或态射。
 
@@ -210,27 +211,27 @@ instance Functor (Const a) where
 
 双函子、逆变函子和 profunctor 在 `base` 库中有实现，它们分别位于 `Data.Bifunctor`、`Data.Functor.Contravariant` 与 `Data.Profunctor`。
 
-## 笛卡尔闭范畴（Cartesian Closed Category）
+##  Cartesian 闭范畴（Cartesian Closed Category）
 
-笛卡尔闭范畴是简单类型（Simply typed）λ- 演算的重要基础。
+ Cartesian 闭范畴是简单类型（Simply typed）λ- 演算的重要基础。
 
-一个笛卡尔闭范畴：
+一个 Cartesian 闭范畴：
 
 - 有终物件；
 - 对任何两个物件 $X$、$Y$，它们的积 $X \times Y$ 也在范畴内；
 - 对任何两个物件 $X$、$Y$，它们的幂 $Y^X$ 也在范畴内。
 
-$\bf Set$ 就是一个笛卡尔闭范畴。我们可以看到：
+$\bf Set$ 就是一个 Cartesian 闭范畴。我们可以看到：
 
 - 它的终物件就是仅有一个元素的集合 $\mathbb S$；
-- 对任何两个物件 $X$、$Y$，它们的积就是笛卡尔积。
+- 对任何两个物件 $X$、$Y$，它们的积就是 Cartesian 积。
 - 对任何两个物件 $X$、$Y$，它们的幂就是 ${\bf Set}XY$。
 
-### 双笛卡尔（Bicartesian）闭范畴
+### 双- Cartesian （Bicartesian）闭范畴
 
-一些笛卡尔闭范畴是双笛卡尔闭范畴，它们支持类似乘法分配律和交换律的运算，乘法是求积，加法是求余积，即，对于任何物件 $A$、$B$、$C$，有 $A \times (B \oplus C) = A \times B \oplus A \times C$。$\bf Set$ 就是一个双笛卡尔闭范畴。
+一些 Cartesian 闭范畴是双- Cartesian 闭范畴，它们支持类似乘法分配律和交换律的运算，乘法是求积，加法是求余积，即，对于任何物件 $A$、$B$、$C$，有 $A \times (B \oplus C) = A \times B \oplus A \times C$。$\bf Set$ 就是一个双- Cartesian 闭范畴。
 
-双笛卡尔闭范畴在幂上有一些很有趣的性质，我们一会会看到。
+双- Cartesian 闭范畴在幂上有一些很有趣的性质，我们一会会看到。
 
 ## 对 Algebraic Data Types 的理解
 
@@ -248,7 +249,7 @@ data Add a b = First a | Second b
 newtype Mult a b = Mult a b
 ```
 
-这个类型里面存的是一个 `a` 和一个 `b`。可以看出来它是两个集合的笛卡尔积。这是乘法。
+这个类型里面存的是一个 `a` 和一个 `b`。可以看出来它是两个集合的 Cartesian 积。这是乘法。
 
 ### 幂 `(a -> b)`
 
@@ -258,7 +259,7 @@ type Exp a b = a -> b
 
 这样想：一个（纯）函数又是一张从 `a` 映射到 `b` 的表。它的长度是 `a` 的集合大小，每个取值可以取 `b` 的任何值。算一下就知道，一共有 $b^a$ 张表。这是幂。
 
-下面有一些性质，它们不仅应用到 $\bf Hask$（或 $\bf Set$），也应用到所有双笛卡尔闭范畴。
+下面有一些性质，它们不仅应用到 $\bf Hask$（或 $\bf Set$），也应用到所有双- Cartesian 闭范畴。
 
 #### 0 为指数
 
@@ -286,9 +287,9 @@ type Exp a b = a -> b
 
 考虑 $(a \times b)^c = a^c \times b^c$。这说明 `c -> (a, b)` 与 `(c -> b, c -> a)` 同构，这很好理解。
 
-## 柯里-霍华德同构（Curry-Howard Isomorphism）
+## Curry-Howard 同构（Curry-Howard Isomorphism）
 
-柯里-霍华德同构（或称对应），是指“命题即类型，程序即证明”；更准确地说：
+Curry-Howard 同构（或称对应），是指“命题即类型，程序即证明”；更准确地说：
 
 - `Void` 与 $\bot$ 同构，
 - `()` 与 $\top$ 同构，
@@ -353,7 +354,9 @@ eta :: F a -> G a
 > 
 > 在你很久之前看过的“图解 Monad”（那篇文章很带有误解性，但是某种意义上能帮助理解）中，它提到了 Functor 是一种“容器”；那么在这里，我们“先更改容器里的东西，再更换容器”和“先更换容器，再更改容器里的东西”是一个意思。——它们理应是一个意思，不然 $F$ 和 $G$ 就不配叫函子。
 
-### 米田<span style="color: black; background-color: black;">共</span>引理（よねだのほだい、Yoneda Lemma）
+同时逆变函子之间也有自然变换。
+
+### 先提一下：<ruby>米田<rt>よねだ</rt></ruby>引理（<ruby>米田の補題<rt>よねだのほだい</rt></ruby>、Yoneda Lemma）
 
 米田引理显示，对于任何物件 $A$，自然变换（即态射集合） $\alpha:\ ?^A \Rightarrow F$ 与 $FA$ （一个物件，在 $\bf Hask$ 下也是个集合）同构。
 
@@ -362,7 +365,7 @@ eta :: F a -> G a
 ```haskell
 newtype Reader a b = Reader (a -> b)
 instance Functor Reader a where
-    fmap f g = f . g
+    fmap f (Reader g) = Reader $ f . g
 ```
 
 那么，`Reader () a` 和 `a` 是同构的。
@@ -377,10 +380,18 @@ alpha :: Reader () a -> Maybe a
 
 ```haskell
 alpha = const Nothing
-alpha = Just . (() &)
+alpha (Reader f) = Just $ f ()
 ```
 
-我们这里有两个自然变换，刚好 `Maybe ()` 的两个可能的值对应：`Just ()` 和 `Nothing`。
+我们这里有两个自然变换，刚好和 `Maybe ()` 的两个可能的值对应：`Just ()` 和 `Nothing`。
+
+## 函子范畴
+
+任何一个小范畴 $\mathcal C$ 射向范畴 $\mathcal D$ 之间的所有函子可以组成一个小范畴。物件是函子，态射是自然变换。我们把它记作 ${\bf Fun}\mathcal C\mathcal D$。
+
+这样我们得到老生常谈的组合性质，即如果我们有 $\alpha_A: FA \to GA$、$\beta_A: GA \to HA$，那么 $\beta_A \circ \alpha_A : FA \to HA$；我们把所有 $\beta_? \circ \alpha_?$ 的集合（也是一个自然变换）记作 $\beta \cdot \alpha$。但是，这只是**一种**组合自然变换的方法，它叫“垂直组合（vertical compositon）”。
+
+
 
 ## 单子（Monad）
 

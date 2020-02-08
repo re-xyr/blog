@@ -4,8 +4,9 @@ description: Ref:LuoguOJ/P1516
 author: t532
 date: Sat Oct 26 2019 01:09:06 GMT+0800 (GMT+08:00)
 category:
-    - OI
+    - 信竞
     - 题解
+    - Warn:不准确
 ---
 
 # P1516 青蛙的约会 题解

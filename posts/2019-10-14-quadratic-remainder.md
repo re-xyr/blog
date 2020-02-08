@@ -4,8 +4,9 @@ description: 其实没学会，只是记一下
 author: t532
 date: Sun Oct 14 2019 21:38:03 GMT+0800 (GMT+08:00)
 category:
-    - OI
+    - 信竞
     - 新知
+    - Warn:不准确
 ---
 
 # 二次剩余

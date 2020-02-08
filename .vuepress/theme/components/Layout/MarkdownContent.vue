@@ -25,6 +25,10 @@
 
 <style>
 
+.content {
+    font-family: 'CMU Serif', 'Times New Roman', 'Microsoft YaHei', serif;
+}
+
 .content .header-anchor {
     text-decoration: none;
     color: #aaa !important;
@@ -65,7 +69,7 @@
 
 .content pre,
 .content code {
-    font-family: inherit;
+    font-family: 'Fira Code', 'Fira Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 :not(pre) > code {
