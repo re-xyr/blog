@@ -8,6 +8,7 @@ install:
   - npm install
 script:
   - npm run build
+  - cp CNAME .vuepress/dist/
   - cd .vuepress/dist
   - git init # Init temporary repo
   - git config user.email "trustq@qq.com" # Config Email
