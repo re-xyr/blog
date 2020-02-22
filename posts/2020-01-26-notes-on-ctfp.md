@@ -190,7 +190,7 @@ Profunctor 是这样一个双函子 $F: \mathcal C^{op} \times \mathcal D \to {\
 
 特别地，我们可以注意到 `(->) a` 也是函子（想一想，为什么）：
 
-```Haskell
+```haskell
 class Functor f where 
     fmap :: (a -> b) -> (f a -> f b)
 instance Functor ((->) a) where
@@ -199,7 +199,7 @@ instance Functor ((->) a) where
 
 并且我们有一个 `Const a` 函子，所有对它的 `fmap` 均不会产生更改：
 
-```Haskell
+```haskell
 data Const a b = Const a
 instance Functor (Const a) where
     fmap _ = id
@@ -208,6 +208,14 @@ instance Functor (Const a) where
 这其实就是上边提到的函子 ${\rm \Delta}_A$ 在 ${\bf Hask}$ 下的自函子（为什么）。
 
 在 Haskell 中，`(->)` 就是一个 Profunctor（想一想，为什么）。
+
+```haskell
+class Profunctor f where
+    dimap :: (b -> a) -> (c -> d) -> (p a b -> p c d)
+
+instance Profunctor (->) where
+    dimap mapA mapR f = mapR . f . mapA
+```
 
 双函子、逆变函子和 profunctor 在 `base` 库中有实现，它们分别位于 `Data.Bifunctor`、`Data.Functor.Contravariant` 与 `Data.Profunctor`。
 
@@ -390,8 +398,6 @@ alpha (Reader f) = Just $ f ()
 任何一个小范畴 $\mathcal C$ 射向范畴 $\mathcal D$ 之间的所有函子可以组成一个小范畴。物件是函子，态射是自然变换。我们把它记作 ${\bf Fun}\mathcal C\mathcal D$。
 
 这样我们得到老生常谈的组合性质，即如果我们有 $\alpha_A: FA \to GA$、$\beta_A: GA \to HA$，那么 $\beta_A \circ \alpha_A : FA \to HA$；我们把所有 $\beta_? \circ \alpha_?$ 的集合（也是一个自然变换）记作 $\beta \cdot \alpha$。但是，这只是**一种**组合自然变换的方法，它叫“垂直组合（vertical compositon）”。
-
-
 
 ## 单子（Monad）
 
