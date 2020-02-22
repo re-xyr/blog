@@ -114,8 +114,13 @@ import aboutme from '../../aboutme'
 import Anchor from './Anchor.vue'
 export default {
     name: 'Header',
-    data() { 
-        return { aboutme, expand: false }
+    props: ['autoshow'],
+    data() {
+        if (this.autoshow) {
+            return { aboutme, expand: true }
+        } else {
+            return { aboutme, expand: false }
+        }
     },
     components: { Anchor },
 }

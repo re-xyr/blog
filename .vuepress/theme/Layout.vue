@@ -1,6 +1,6 @@
 <template>
     <div class="layout" :class="$frontmatterKey ? 'fmidx' : ($pagination ? 'index' : 'post')">
-        <Header />
+        <Header :autoshow="$frontmatterKey || $pagination ? true : false" />
         <div class="main">
             <CategoryList v-if="$frontmatterKey" :list="$frontmatterKey.list" />
             <template v-else-if="$pagination">
