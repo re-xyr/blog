@@ -4,7 +4,7 @@ description:
 author: t532
 date: Wed Feb 19 2020 23:13:10 GMT+0800 (GMT+08:00)
 category:
-    - FP
+    - 函数式
     - 数学
 ---
 
@@ -39,7 +39,7 @@ Coq 是一个**交互式定理证明器**，[四色定理](https://en.wikipedia.
 CoqIde 是 Coq 自带的交互环境，~~我觉得它不太好用但是因为是自带的所以这里就用它了~~，我们将全程在这里编写证明。首先在开始菜单中（或者对于 macOS 用户，在 Launchpad 中；对于 linux 用户，自己鼓捣去）找到 `CoqIde` 并打开。
 
 （CoqIde 的界面。）  
-![CoqIde 界面](https://cdn.luogu.com.cn/upload/image_hosting/7gxdwma1.png)
+![CoqIde 界面](/img/2020-02-19-simple-proofs-in-coq/01.png)
 
 > 下文中的每一段代码，你都应该复制到 CoqIde 内左侧的输入框里。
 >
@@ -68,7 +68,7 @@ Inductive bool: Type :=
 复制前面那段代码到 CoqIde 中，点击上端第三个按钮（向下的箭头），右下角的 Log 中会出现一些信息，同时这段代码被染绿，这就说明这个类型被定义了。之后每复制一段代码到 CoqIde 中，都可以单击这个按钮执行，点一次执行一句（也就是执行到下一个句号 `.`）。
 
 （定义类型后的 CoqIde。）  
-![定义 bool 类型后的 CoqIde](https://cdn.luogu.com.cn/upload/image_hosting/dj6imzvf.png)
+![定义 bool 类型后的 CoqIde](/img/2020-02-19-simple-proofs-in-coq/02.png)
 
 **练习题. Ex 1.** 定义一个类型 `weekday`，让它代表一周内的七天。
 
@@ -107,7 +107,7 @@ Definition negb (b:bool) : bool :=
   - `end.`：结束。
 
 （定义函数后的 CoqIde。）  
-![添加函数定义后的 CoqIde](https://cdn.luogu.com.cn/upload/image_hosting/ja5i3aek.png)
+![添加函数定义后的 CoqIde](/img/2020-02-19-simple-proofs-in-coq/03.png)
 
 同时，也可定义接受多个参数的函数。这里定义一下逻辑与（$A \land B$）：
 
@@ -161,13 +161,13 @@ Qed.
 在 CoqIde 里一步一步执行这段证明，观察右上角的证明区域如何变化。
 
 （开始证明。）  
-![Proof. 时的 CoqIde](https://cdn.luogu.com.cn/upload/image_hosting/hgjkv7ga.png)
+![Proof. 时的 CoqIde](/img/2020-02-19-simple-proofs-in-coq/04.png)
 
 （化简。）  
-![simpl. 时的 CoqIde](https://cdn.luogu.com.cn/upload/image_hosting/lvzd73rs.png)
+![simpl. 时的 CoqIde](/img/2020-02-19-simple-proofs-in-coq/05.png)
 
 （结束证明。）  
-![refl. 时的 CoqIde](https://cdn.luogu.com.cn/upload/image_hosting/u8cy6pw5.png)
+![refl. 时的 CoqIde](/img/2020-02-19-simple-proofs-in-coq/06.png)
 
 **练习题. Ex 3.** 给出下面几个关于 `andb` 性质的平凡命题的证明。
 ```coq
@@ -285,11 +285,11 @@ Qed.
 ```
 
 （`intros` 前与 `intros` 后，注意分割线上方出现的东西。）  
-![开始证明](https://cdn.luogu.com.cn/upload/image_hosting/eig4f08t.png)
-![intros](https://cdn.luogu.com.cn/upload/image_hosting/omu0ldav.png)
+![开始证明](/img/2020-02-19-simple-proofs-in-coq/07.png)
+![intros](/img/2020-02-19-simple-proofs-in-coq/08.png)
 
 （重写之后，等式两边相同了。）  
-![rewrite](https://cdn.luogu.com.cn/upload/image_hosting/uthiis06.png)
+![rewrite](/img/2020-02-19-simple-proofs-in-coq/09.png)
 
 **练习题. Ex 5. 证明命题：对于所有自然数 $n,m$，如果 $m = n^+$，那么 $m \times (1 + n) = m \times m$。**
 ```coq
@@ -339,13 +339,13 @@ Qed.
 逐步执行上面的代码，可以看到 `destruct n.` 将命题拆分成了两个分命题（subgoals）。这些命题中 Coq 有了更多的信息，证明起来也就更容易。在分命题中证明时，我们使用类似 Markdown 列表的语法来分别两个分命题。之后还会有分命题中的分命题，每层都需要使用不同的列表记号（可用的有 `-`、`+`、`*`）。
 
 （`destruct` 将命题分解。）  
-![destruct](https://cdn.luogu.com.cn/upload/image_hosting/9lo1aiha.png)
+![destruct](/img/2020-02-19-simple-proofs-in-coq/10.png)
 
 (第一个分命题。）  
-![1st subgoal](https://cdn.luogu.com.cn/upload/image_hosting/3495j0th.png)
+![1st subgoal](/img/2020-02-19-simple-proofs-in-coq/11.png)
 
 (完成第一个分命题时，Coq 提醒还存在未验证的分命题，同时展示第二个分命题。）  
-![2nd subgoal](https://cdn.luogu.com.cn/upload/image_hosting/ypis9wat.png)
+![2nd subgoal](/img/2020-02-19-simple-proofs-in-coq/12.png)
 
 **练习题. Ex 6.** 证明对于布尔值 $b, c$，如果 $b \land c = {\rm true}$ 那么 $c = {\rm true}$。（注意，分类讨论时，你可能会遇到一些荒谬的情况，它们拥有错误的前提。但是不用担心，这些情况下你仍然可以推出结论。记住，从错误的前提什么都可以推出。）
 ```coq
@@ -397,13 +397,13 @@ Qed.
 特别注意那个 `IHn`，它是 Coq 为归纳的前提条件（即当目标为 $n^+$ 时 $n = n + 0$）自动起的名字。
 
 （执行 `induction` 后分解为两个分命题）  
-![induction](https://cdn.luogu.com.cn/upload/image_hosting/ki1ftwka.png)
+![induction](/img/2020-02-19-simple-proofs-in-coq/13.png)
 
 （基准条件）  
-![baseline](https://cdn.luogu.com.cn/upload/image_hosting/6y76kj7s.png)
+![baseline](/img/2020-02-19-simple-proofs-in-coq/14.png)
 
 （归纳条件）  
-![induction](https://cdn.luogu.com.cn/upload/image_hosting/dzthnmdi.png)
+![induction](/img/2020-02-19-simple-proofs-in-coq/15.png)
 
 **练习题. Ex 7.** 证明一条引理：对于自然数 $n, m$，$(n+m)^+ = n + m^+$。
 ```coq
@@ -433,7 +433,7 @@ Proof.
 
 看到 CoqIde 给出的第一个分命题：
 
-![plus comm 1st subgoal](https://cdn.luogu.com.cn/upload/image_hosting/yxcynahe.png)
+![plus comm 1st subgoal](/img/2020-02-19-simple-proofs-in-coq/16.png)
 
 `m = m + 0`，正是之前我们证明过的命题 `plus_n_O`。在 Coq 中，我们可以使用已经证明的命题（也就是定理）进行重写。于是
 
@@ -448,7 +448,7 @@ Proof.
   - simpl.
 ```
 
-![plus comm 2nd subgoal](https://cdn.luogu.com.cn/upload/image_hosting/d12up0hc.png)
+![plus comm 2nd subgoal](/img/2020-02-19-simple-proofs-in-coq/17.png)
 
 尝试重写：
 
@@ -456,7 +456,7 @@ Proof.
     rewrite -> IHn.
 ```
 
-![plus comm 2nd subgoal after rewrite](https://cdn.luogu.com.cn/upload/image_hosting/6zkgpsim.png)
+![plus comm 2nd subgoal after rewrite](/img/2020-02-19-simple-proofs-in-coq/18.png)
 
 `S (m + n) = m + S n` 正是练习题中证明的引理 `plus_n_Sm`。重写，证毕。
 
