@@ -5,5 +5,6 @@ module.exports = {
         'Luogu OJ': 'https://www.luogu.com.cn/user/82416',
         'Codewars': 'https://www.codewars.com/users/t532',
         'Telegram': 'https://t.me/yumiko_tg',
+        'Mail': 'mailto:t532@foxmail.com',
     },
 }
