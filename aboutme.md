@@ -17,6 +17,3 @@ notPost: true
 - 或许可以使用 Node.js 和 TypeScript 进行开发
 - 想要学习 Rust、Haskell、Agda、Idris、Coq 等语言
 - 认为左大括号不应该另起一行，认为数组应该从 0 开始，认为约定大于限制，认为模式的应用很有限
-
-
-

@@ -20,6 +20,8 @@
 }
 .anchor span {
     padding-left: 1em;
+    position: relative;
+    z-index: 1;
 }
 .anchor.tall span {
     padding-left: .5em;
@@ -36,7 +38,6 @@
     height: 1.2em;
     width: .3em;
     background: gray;
-    z-index: -1;
 }
 .anchor.tall::before {
     height: 2em;

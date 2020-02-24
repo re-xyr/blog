@@ -18,8 +18,8 @@ const runDirectives = str => {
     return str
 }
 module.exports = {
-    title: 't532\'s blog',
-    description: 'Deadline is motivation',
+    title: 'Nyan!',
+    description: 't532\'s blog',
     head: [
         ['link', {
             rel: 'stylesheet',

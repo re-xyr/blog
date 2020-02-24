@@ -1,9 +1,10 @@
 <template>
     <div class="footer">
+        &copy; {{ new Date().getFullYear() }} t532
+        <a href="/LICENSE">Contents distributed under CC-BY 4.0 Public License; Website Code distributed under MIT License.</a>
+        <br />
         <a href="https://github.com/t532/blog">Built by t532 with ❤</a> / 
-        <a href="https://vuepress.vuejs.org">Powered by VuePress</a> /
-        Distributed under
-        <a href="/LICENSE">2-Section Website Public License.</a>
+        <a href="https://vuepress.vuejs.org">Powered by VuePress</a>
     </div>
 </template>
 

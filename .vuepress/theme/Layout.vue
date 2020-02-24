@@ -22,9 +22,6 @@
     body {
         /* ATTENTION: This background image ("the Image") is an original artwork by 望月しいな/Mochizuki Shiina ("the Illustrator") (see https://www.pixiv.net/artworks/78398601), and an inference has been made that all rights of the Image are reserved by the Illustrator (as no copyright declaration could be found), so the use of the Image may lead to a copyright violation. Thus, the Image shall be taken down whenever the Illustrator requests to. */
         background-image: url('img/theme-bg.jpg');
-        background-color: rgba(255, 255, 255, 0.85);
-        opacity: 1;
-        animation: fadein 1s;
         background-attachment: fixed;
         background-position: 25%;
         background-size: cover;
@@ -36,9 +33,22 @@
         color: inherit;
     }
     .layout {
-        padding: 3em 1em;
-        margin: 0 auto;
+        opacity: 1;
+        animation: fadein 1s;
+        padding: 3em 3em;
+        margin: 3em auto;
         max-width: 1000px;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    @media screen and (max-width: 1050px) {
+        .layout {
+            margin: 0 auto;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .layout {
+            padding: 3em 1em;
+        }
     }
     .main {
         border-top: 1px solid gray;
@@ -48,13 +58,13 @@
     @keyframes fadein {
         from {
             opacity: 0;
-            background-color: #eee0;
+            background-color: rgba(255, 255, 255, 0);
         } 50% {
             opacity: 0;
-            background-color: #eee0;
+            background-color: rgba(255, 255, 255, 0);
         } to {
             opacity: 1;
-            background-color: #eeee;
+            background-color: rgba(255, 255, 255, 0.85);
         }
     }
 </style>

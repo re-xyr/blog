@@ -16,6 +16,10 @@
     text-decoration: none !important;
     transition: .7s;
 }
+.friendanchor * {
+    position: relative;
+    z-index: 1;
+}
 .friendanchor.tall {
     height: 2em;
 }
@@ -38,7 +42,6 @@
     position: absolute;
     height: 4em;
     width: .3em;
-    z-index: -1;
 }
 .friendanchor:hover::before {
     width: 20em;
