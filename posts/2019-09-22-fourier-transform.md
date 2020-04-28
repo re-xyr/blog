@@ -7,6 +7,7 @@ category:
     - 数学
     - 新知
     - Stat:搁置
+hidden: true
 ---
 
 # 函数频谱与傅里叶变换

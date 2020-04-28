@@ -18,16 +18,16 @@
                 >{{ acc[0] }}</Anchor>
             </div>
         </div>
-        <Anchor href="/aboutme" class="header-anchor">∦ 关于我</Anchor>
-        <Anchor href="/category" class="header-anchor">≡ 分类</Anchor>
-        <Anchor href="/friends" class="header-anchor">⇋ 友链</Anchor>
+        <Anchor href="/aboutme" class="header-anchor">关于我</Anchor>
+        <Anchor href="/category" class="header-anchor">分类</Anchor>
+        <Anchor href="/friends" class="header-anchor">友链</Anchor>
     </div>
 </template>
 
 <style scoped>
 .header {
     margin-bottom: 2em;
-    font-family: 'Fira Code', 'Fira Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-weight: lighter;
 }
 .header-main {
     position: relative;
@@ -39,11 +39,12 @@
 }
 .header-main-float {
     position: absolute;
+    font-family: "Courier New";
     right: 0;
     width: auto;
     min-width: 40px;
     height: 40px;
-    padding: 7px 5px;
+    padding: 8px 6px;
     border-radius: 999px;
     background: #fffa;
     box-shadow: 0 0 3px gray;

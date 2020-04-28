@@ -3,17 +3,23 @@ notPost: true
 ---
 # 关于我
 
-**t532 (aka Yumiko, Trustless)**
+**Yumiko "Trustless" R, aka t532.**
 
 - 初三学生
-- 喜欢穿裙子
-- 半个音游狗
+
+- 伪娘，not MtF
+
 - 作息时间很不规则
 - 有严重的拖延习惯
-- 或许算是半个 OIer
+
+- 半个音游狗
+
 - 拒绝任何政治相关讨论
-- 可以在主页顶部的链接中找到我的联系方式
-- 想要学习并行编程、范畴论、类型论与形式化证明
-- 或许可以使用 Node.js 和 TypeScript 进行开发
-- 想要学习 Rust、Haskell、Agda、Idris、Coq 等语言
+
+- 想要并且正在尝试学习 PLT
+- 或许可以使用 TypeScript、Haskell
+- 或许正在学习 Agda、Coq、Haskell
+- 或许想要学习 Rust、Idris、Arend 
 - 认为左大括号不应该另起一行，认为数组应该从 0 开始，认为约定大于限制，认为模式的应用很有限
+
+- 可以在主页顶部的链接中找到我的联系方式

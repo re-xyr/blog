@@ -6,6 +6,7 @@ date: Fri Oct 04 2019 14:39:40 GMT+0800 (GMT+08:00)
 category:
     - 信竞
     - Stat:放弃
+hidden: true
 ---
 # 算法复习
 快 CSP 了，所以瞎写点。使用类似 Python 语法的伪码。

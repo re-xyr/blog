@@ -27,7 +27,7 @@
         background-size: cover;
         background-blend-mode: overlay;
         color: #111;
-        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        font-family: 'CMU Serif', 'KaTeX_Main', 'Segoe UI', 'Microsoft YaHei', sans-serif;
     }
     a {
         color: inherit;

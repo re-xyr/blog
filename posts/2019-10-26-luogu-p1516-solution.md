@@ -7,6 +7,7 @@ category:
     - 信竞
     - 题解
     - Warn:不准确
+hidden: true
 ---
 
 # P1516 青蛙的约会 题解

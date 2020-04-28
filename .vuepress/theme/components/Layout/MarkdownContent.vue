@@ -25,10 +25,6 @@
 
 <style>
 
-.content {
-    font-family: 'CMU Serif', 'Times New Roman', 'Microsoft YaHei', serif;
-}
-
 .content .header-anchor {
     text-decoration: none;
     color: #aaa !important;

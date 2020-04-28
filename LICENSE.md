@@ -1,9 +1,6 @@
 ---
 notPost: true
 ---
-# 2-Section Website Public License
-
-这份中文翻译被插入到原协议文本前，仅供参考。
 
 > 摘要：博客代码使用 MIT 协议，博客内容使用 CC-BY 4.0 协议。
 
@@ -43,9 +40,7 @@ Copyright &copy; 2020 t532（“作者”）
 
 > *这张背景图片（“图片”）是望月しいな/望月椎名（“插画师”）的原创画作（见[原发表](https://www.pixiv.net/artworks/78398601)），并且被推测为保留所有权利（因为无法找到版权声明），所以对图片的使用可能会导致侵犯版权。因此，当插画师要求时，应该立即撤下图片。*
 
-> 以下是原协议文本
-
-I made up the name of the license. w
+---
 
 Copyright &copy; 2020 t532 (the "Author")
 
@@ -80,4 +75,4 @@ Copyright &copy; 2020 t532 (the "Author")
 
 *Specifically, the background image of this website will change occasionally, and the copyright often does not belong to the Author. For reference, here is the copyright status of the current background image:*
 
-> *This background image ("the Image") is an original artwork by 望月しいな/Mochizuki Shiina ("the Illustrator") (see https://www.pixiv.net/artworks/78398601), and an inference has been made that all rights of the Image are reserved by the Illustrator (as no copyright declaration could be found), so the use of the Image may lead to a copyright violation. Thus, the Image shall be taken down whenever the Illustrator requests to.*
+> *This background image ("the Image") is an original artwork by 望月しいな/Mochizuki Shiina ("the Illustrator") (refer to https://www.pixiv.net/artworks/78398601), and an inference has been made that all rights of the Image are reserved by the Illustrator (as no copyright declaration could be found), so the use of the Image may lead to a copyright violation. Thus, the Image shall be taken down whenever the Illustrator requests to.*
