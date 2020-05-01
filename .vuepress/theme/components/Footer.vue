@@ -1,9 +1,8 @@
 <template>
     <div class="footer">
-        &copy; {{ new Date().getFullYear() }} t532
-        <a href="/LICENSE">Contents distributed under CC-BY 4.0 Public License; Website Code distributed under MIT License.</a>
+        &copy; {{ new Date().getFullYear() }} Yumiko Ren
         <br />
-        <a href="https://github.com/t532/blog">Built by t532 with ❤</a> / 
+        <a href="https://github.com/t532/blog">Website built by t532 with ❤</a> under a <a href="/LICENSE">MIT License</a> / 
         <a href="https://vuepress.vuejs.org">Powered by VuePress</a>
     </div>
 </template>

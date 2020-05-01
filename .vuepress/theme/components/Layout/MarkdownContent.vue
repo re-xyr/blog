@@ -4,16 +4,13 @@
             <Content />
             <blockquote v-if="!$page.frontmatter.notPost">
                 <p>
-                    ｢ <strong><em>{{ $page.frontmatter.title }}</em></strong> ｣，
-                    作者
-                    <em>{{ $page.frontmatter.author }}</em>，
-                    于
-                    {{ $page.frontmatter.date.slice(0, -12) }}
-                    在分类
-                    <span v-for="cat in $page.frontmatter.category" class="content-footerlink">
-                        <a :href="`/category/${cat}`">[ {{ cat }} ]</a>
-                    </span>
-                    下发表。
+                    本作品 ｢ <strong><em>{{ $page.frontmatter.title }}</em></strong> ｣ 应用
+                    <a href="https://creativecommons.org/licenses/by/4.0/">知识共享 署名 4.0 国际协议</a>。
+                </p>
+                <p>
+                    The work <strong><em>{{ $page.frontmatter.title }}</em></strong>
+                    is published under a
+                    <a href="https://creativecommons.org/licenses/by/4.0/">Createive Commons 4.0 Attribution 4.0 International License</a>.
                 </p>
             </blockquote>
         </div>
