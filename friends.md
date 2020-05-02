@@ -20,3 +20,5 @@ notPost: true
 <Friend title="OrzZz~" name="子不语" href="https://orzzz.org/" />
 <Friend title="清筠小站" name="?" href="http://www.ycwqy.club/" />
 <Friend title="EtherealBot" name="Ethereal黑猫" href="http://tangbot.cn/" />
+<Friend title="DiB Blog" name="DiB (DinnerBone)" href="https://dimerbone.github.io" />
+<Friend title="SkinCrab's Blog" name="SkinCrab" href="https://skina.cn/" />
