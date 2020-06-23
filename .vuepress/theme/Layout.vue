@@ -1,70 +1,91 @@
 <template>
-    <div class="layout" :class="$frontmatterKey ? 'fmidx' : ($pagination ? 'index' : 'post')">
-        <Header :autoshow="$frontmatterKey || $pagination ? true : false" />
-        <div class="main">
-            <CategoryList v-if="$frontmatterKey" :list="$frontmatterKey.list" />
-            <template v-else-if="$pagination">
-                <PageList :pages="$pagination.pages" />
-                <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>
+    <div class="layout">
+            <template v-if="$frontmatterKey">
+                <Header title="Categories" />
+                <main>
+                    <CategoryList :list="$frontmatterKey.list" />
+                </main>
             </template>
-            <MarkdownContent v-else />
-        </div>
+            <template v-else-if="$pagination">
+                <Header :title="$site.title" :isMain="true" />
+                <main>
+                    <PageList :pages="$pagination.pages" />
+                    <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>
+                </main>
+            </template>
+            <template v-else>
+                <Header :title="$frontmatter.title" />
+                <main>
+                    <MarkdownContent />
+                </main>
+            </template>
+        </main>
         <Footer />
     </div>
 </template>
 
 <style>
+    @font-face {
+        font-family: han-songti;
+        src:
+            local('Source Han Serif'),
+            local('Noto Serif CJK'),
+            local('Adobe Song Std')
+            local('STZhongsong'),
+            local('Songti SC'),
+            local('STSong'),
+            local('SimSun');
+    }
+    @font-face {
+        font-family: han-kaiti;
+        src:
+            local('STKaiti'),
+            local('Kaiti SC'),
+            local('KaiTi');
+    }
+    @font-face {
+        font-family: han-heiti;
+        src:
+            local('Source Han Sans'),
+            local('Noto Sans CJK'),
+            local('Adobe Heiti Std')
+            local('PingFang SC'),
+            local('Microsoft YaHei'),
+            local('STHeiti'),
+            local('Heiti SC'),
+            local('SimHei');
+    }
+    @font-face {
+        font-family: han-fangsong;
+        src:
+            local('Adobe Fangsong Std'),
+            local('STFangsong'),
+            local('FangSong');
+    }
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
-    body {
-        /* ATTENTION: This background image ("the Image") is an original artwork by 望月しいな/Mochizuki Shiina ("the Illustrator") (see https://www.pixiv.net/artworks/78398601), and an inference has been made that all rights of the Image are reserved by the Illustrator (as no copyright declaration could be found), so the use of the Image may lead to a copyright violation. Thus, the Image shall be taken down whenever the Illustrator requests to. */
-        background-image: url('img/theme-bg.jpg');
-        background-attachment: fixed;
-        background-position: 25%;
-        background-size: cover;
-        background-blend-mode: overlay;
-        color: #111;
-        font-family: 'CMU Serif', 'KaTeX_Main', 'Segoe UI', 'Microsoft YaHei', sans-serif;
-    }
     a {
         color: inherit;
     }
     .layout {
-        opacity: 1;
-        animation: fadein 1s;
-        padding: 3em 3em;
+        color: #222;
+        font-family: KaTeX_Main, han-songti, serif;
+        padding: 0 3em;
         margin: 3em auto;
         max-width: 1000px;
-        background-color: rgba(255, 255, 255, 0.85);
+        font-size: 1.2em;
+        line-height: 1.5em;
+        background-color: white;
     }
-    @media screen and (max-width: 1050px) {
-        .layout {
-            margin: 0 auto;
-        }
+    main {
+        padding-top: 1em;
     }
     @media screen and (max-width: 400px) {
         .layout {
-            padding: 3em 1em;
-        }
-    }
-    .main {
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
-        padding: 2em 0;
-    }
-    @keyframes fadein {
-        from {
-            opacity: 0;
-            background-color: rgba(255, 255, 255, 0);
-        } 50% {
-            opacity: 0;
-            background-color: rgba(255, 255, 255, 0);
-        } to {
-            opacity: 1;
-            background-color: rgba(255, 255, 255, 0.85);
+            padding: 0 1em;
         }
     }
 </style>

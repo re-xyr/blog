@@ -1,27 +1,19 @@
 <template>
-    <div class="content-container">
-        <div class="content">
-            <Content />
-            <blockquote v-if="!$page.frontmatter.notPost">
-                <p>
-                    本作品 ｢ <strong><em>{{ $page.frontmatter.title }}</em></strong> ｣ 应用
-                    <a href="https://creativecommons.org/licenses/by/4.0/">知识共享 署名 4.0 国际协议</a>。
-                </p>
-                <p>
-                    The work <strong><em>{{ $page.frontmatter.title }}</em></strong>
-                    is published under a
-                    <a href="https://creativecommons.org/licenses/by/4.0/">Createive Commons 4.0 Attribution 4.0 International License</a>.
-                </p>
-            </blockquote>
-        </div>
-        <div class="content-end">
-            おわり
-        </div>
-    </div>
+    <section class="content">
+        <Content />
+        <blockquote class="content-end" v-if="!$page.frontmatter.notPost">
+            <p>
+                本作品应用
+                <a href="https://creativecommons.org/licenses/by/4.0/">知识共享 署名 4.0 国际协议</a>。
+                <br />
+                The work is published under a
+                <a href="https://creativecommons.org/licenses/by/4.0/">Createive Commons 4.0 Attribution 4.0 International License</a>.
+            </p>
+        </blockquote>
+    </section>
 </template>
 
 <style>
-
 .content .header-anchor {
     text-decoration: none;
     color: #aaa !important;
@@ -49,6 +41,17 @@
     line-height: 1.8em;
 }
 
+.content img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: max-content;
+}
+
+.content h1 {
+    font-size: 2em;
+}
+
 .content a {
     color: #33a;
     transition: .2s;
@@ -62,16 +65,11 @@
 
 .content pre,
 .content code {
-    font-family: 'Fira Code', 'Fira Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
-}
-
-:not(pre) > code {
-    background: #ddd;
-    padding: .2em .3em;
-    border-radius: 5px;
+    font-family: KaTeX_Typewriter;
 }
 
 .content blockquote {
+    font-family: KaTeX_Main, han-fangsong, serif;
     padding-left: 1em;
     border-left: 5px solid #aaa;
     color: gray;
@@ -92,6 +90,14 @@
     background: #e5e5e5;
 }
 
+.content em {
+    font-family: KaTeX_Main, han-kaiti, serif;
+}
+
+.content strong {
+    font-family: KaTeX_Main, han-heiti, sans-serif;
+}
+
 .content-end {
     font-family: sans-serif;
     text-align: center;
@@ -106,7 +112,7 @@
 
 
 <script>
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/themes/prism-solarizedlight.css'
 export default {
     name: 'MarkdownContent',
 }

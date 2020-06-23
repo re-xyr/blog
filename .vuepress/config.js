@@ -1,22 +1,6 @@
 const MarkdownIt = require('markdown-it')
 const Katex = require('katex')
-const directives = {
-    AUTOBREAK: str =>
-        str.replace(/\n/g, "  \n"),
-    INDENTSYM: str =>
-        str.replace(/^(\/+)/mg, str =>
-            str.replace(/\//g, "&nbsp;&nbsp;&nbsp;&nbsp;"))
-}
-const runDirectives = str => {
-    const match = str
-    .match(/<!-- (.+?) -->$/)
-    if (match) {
-        match[1]
-        .split(', ')
-        .forEach(dir => str = directives[dir](str))
-    }
-    return str
-}
+
 module.exports = {
     title: '喵.世界',
     description: 'Life is a chain of moments of enjoyment, not only about survival.',
@@ -44,8 +28,10 @@ module.exports = {
                         path: '/category/',
                         layout: 'FrontmatterIndex',
                     },
-                ], feed: {
-                    canonical_base: 'https://t532.github.io',
+                ], globalPagination: {
+                    lengthPerPage: 10,
+                }, feed: {
+                    canonical_base: 'http://xn--i2r.xn--rhqv96g/',
                 },
             },
         ],
@@ -55,7 +41,7 @@ module.exports = {
             md.render = (src, env) =>
                 MarkdownIt.prototype.render.call(
                     md,
-                    runDirectives(src)
+                    src
                     .replace(/\$\$(.+?)\$\$/g, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: true }))
                     .replace(/\$(.+?)\$/g, (_, str) =>

@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "t532's blog",
+  "description": "Xy Ren's blog",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev .",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t532/blog.git"
+    "url": "git+https://github.com/xy-ren/blog.git"
   },
   "author": "t532",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/t532/blog/issues"
+    "url": "https://github.com/xy-ren/blog/issues"
   },
-  "homepage": "https://github.com/t532/blog#readme",
+  "homepage": "https://github.com/xy-ren/blog#readme",
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "katex": "^0.11.1",

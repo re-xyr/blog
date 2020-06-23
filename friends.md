@@ -1,7 +1,7 @@
 ---
+title: Friends
 notPost: true
 ---
-# 友链
 
 <!-- ppl who i am familiar with -->
 <Friend title="Escape" name="Fressive" href="https://fressive.cn/" />

@@ -1,20 +1,16 @@
 ---
 title: 在 Coq 中使用归纳法验证数学命题
-description: 
-author: t532
 date: Wed Feb 19 2020 23:13:10 GMT+0800 (GMT+08:00)
 category:
     - 函数式
     - 数学
 ---
 
-# 在 Coq 中使用归纳法验证数学命题
-
 > **Reference.** *Software Foundations Volume 1: Logical Foundations (Chap. 1, 2)*, Benjamin C Pierce et al. 
 
 > 前置知识：皮亚诺公理、数学归纳法。
 
-## 引入
+# 引入
 
 > “非形式化的证明是算法；形式化的证明是程序。”
 
@@ -30,7 +26,7 @@ category:
 
 接下来就来认识一下形式化证明吧。
 
-## 认识 Coq
+# 认识 Coq
 
 > *前置准备：到[这里](https://github.com/coq/coq/releases/tag/V8.11.0) 下载并安装 Coq。*
 
@@ -45,7 +41,7 @@ CoqIde 是 Coq 自带的交互环境，~~我觉得它不太好用但是因为是
 >
 > 提供的练习题应该直接写到 CoqIde 里。它们**不是**选做的。如果不做，可能会导致下面的源码无法正常编译。实在不想做可以在本文末尾找到参考答案。
 
-### 类型
+## 类型
 
 Coq 的一大特色是，它并没有所谓“内置的，原始的”类型（比如 C++ 里的 `int`、`bool`、`char` 等）。所有的类型都是通过一种统一的方式定义的。
 
@@ -77,7 +73,7 @@ Inductive weekday: Type :=
   (* 把这段注释替换为你的答案 *).
 ```
 
-### 函数
+## 函数
 
 Coq 作为一门编程语言，当然支持定义函数。但是，正如其他函数式编程语言一样，Coq 只能定义纯函数；更进一步的是，与 Haskell 等语言相比，Coq 只能定义能够终止的函数（无限递归不被允许）。
 
@@ -127,7 +123,7 @@ Definition xorb (b c: bool): bool :=
   (* 把这段注释替换为你的答案 *).
 ```
 
-## 平凡的证明
+# 平凡的证明
 
 先来解决一些平凡的命题。
 
@@ -179,7 +175,7 @@ Theorem f_and_f_eq_f: (andb false false = false).
   (* Proof. ... Qed. 用你的证明替换掉这段注释吧。 *)
 ```
 
-## 自然数与递归
+# 自然数与递归
 
 > 注意，这一段中的*类型*声明都不用复制到 CoqIde 中（但是函数和证明仍然需要），因为 Coq 预置了相同的类型。
 
@@ -244,7 +240,7 @@ Fixpoint eq (a b: nat): bool :=
   (* 把这段注释替换为你的答案 *).
 ```
 
-## 使用重写来证明（`rewrite`）
+# 使用重写来证明（`rewrite`）
 
 来看一下这个命题。
 
@@ -300,7 +296,7 @@ Theorem mult_S_1:
   (* Proof. ... Qed. 用你的证明替换掉这段注释吧。 *)
 ```
 
-## 分类讨论（`destruct`）
+# 分类讨论（`destruct`）
 
 在上一节，我们使用了 `simpl.`、 `reflexivity.`、`intros <...>.`、`rewrite -> <...>.` 这几个**策略**（tactics）进行了证明。然而，在遇到稍许复杂的命题时，单凭化简和重写可能没法起到很好的作用。
 
@@ -356,7 +352,7 @@ Theorem andb_true_elim2:
   (* Proof. ... Qed. 用你的证明替换掉这段注释吧。 *)
 ```
 
-## 归纳证明（`induction`）
+# 归纳证明（`induction`）
 
 有时候，分类讨论也不管用：
 
@@ -492,9 +488,9 @@ Theorem plus_assoc:
   (* Proof. ... Qed. 用你的证明替换掉这段注释吧。 *)
 ```
 
-## 练习题答案
+# 练习题答案
 
-### Ex. 1
+## Ex. 1
 ```coq
 Inductive weekday: Type :=
   | monday
@@ -506,7 +502,7 @@ Inductive weekday: Type :=
   | sunday.
 ```
 
-### Ex. 2
+## Ex. 2
 ```coq
 Definition orb (b c: bool): bool :=
   match b with
@@ -520,7 +516,7 @@ Definition xorb (b c: bool): bool :=
   end.
 ```
 
-### Ex. 3
+## Ex. 3
 ```coq
 Theorem t_and_f_eq_f: (andb true false = false).
   Proof. reflexivity. Qed.
@@ -530,7 +526,7 @@ Theorem f_and_f_eq_f: (andb false false = false).
   Proof. reflexivity. Qed.
 ```
 
-### Ex. 4
+## Ex. 4
 ```coq
 Fixpoint mult (a b: nat): nat :=
   match a with
@@ -552,7 +548,7 @@ Fixpoint eq (a b: nat): bool :=
   end.
 ```
 
-### Ex. 5
+## Ex. 5
 ```coq
 Theorem mult_S_1:
   forall (m n: nat),
@@ -566,7 +562,7 @@ Proof.
 Qed.
 ```
 
-### Ex. 6
+## Ex. 6
 ```coq
 Theorem andb_true_elim2:
   forall (b c: bool),
@@ -586,7 +582,7 @@ Proof.
 Qed.
 ```
 
-### Ex. 7
+## Ex. 7
 ```coq
 Theorem plus_n_Sm:
   forall n m: nat,
@@ -601,7 +597,7 @@ Proof.
 Qed.
 ```
 
-### Ex. 8
+## Ex. 8
 ```coq
 Theorem plus_assoc:
   forall n m p: nat,

@@ -1,7 +1,5 @@
 ---
 title: Church 编码
-description: Church 编码是一种基于 λ- 演算的抽象方法。
-author: t532
 date: Tue Jan 21 2020 18:38:32 GMT+0800 (GMT+08:00)
 category:
     - 函数式
@@ -9,18 +7,16 @@ category:
     - 新知
 ---
 
-# Church 编码
-
 > 自言自语：博客三个月没更新对不起呜呜呜（但是反正没人看也就没关系了对吧（
 
 > 前置知识：[λ- 演算](https://en.wikipedia.org/wiki/Lambda_calculus)，基础 Haskell，[布尔代数](https://en.wikipedia.org/wiki/Boolean_algebra)，小学数学
 
 Church 编码是一种基于 λ- 演算的抽象方法。它将物件（布尔值、自然数、列表、etc）抽象为 abstractions，并通过将公理的基本元素作为参数应用于其上来获得（依基本元素不同而不同的）值。
 
-## Church 布尔代数
+# Church 布尔代数
 Church 布尔代数通过 Church 编码抽象了标准布尔代数，我们可以通过它来理解 Church 编码。
 
-### 布尔值
+## 布尔值
 考虑布尔代数的基本元素，即布尔值：
 
 **公理 a1. 布尔值的集合**
@@ -59,7 +55,7 @@ ifThenElse :: Cbool a -> a -> a
 ifThenElse i t e = i t e
 ```
 
-### 取反
+## 取反
 
 接下来考虑在标准布尔代数中的逻辑取反：
 
@@ -80,7 +76,7 @@ cnot :: Cbool a -> Cbool a
 cnot x t f = x f t
 ```
 
-### 逻辑与
+## 逻辑与
 逻辑与/或/异或可以互推，这里省略证明。
 
 **公理（定理）a3. 布尔代数中的逻辑与**
@@ -104,7 +100,7 @@ cand :: Cbool a -> Cbool a -> Cbool a
 cand x y = x y x
 ```
 
-### 逻辑或
+## 逻辑或
 
 **公理（定理）a4. 布尔代数中的逻辑或**
 $$ \top \lor \top = \top $$
@@ -127,7 +123,7 @@ cor :: Cbool a -> Cbool a -> Cbool a
 cor x y = x x y
 ```
 
-### 逻辑异或
+## 逻辑异或
 
 **公理（定理）a5. 布尔代数中的逻辑异或**
 $$ \top \oplus \top = \bot $$
@@ -150,10 +146,10 @@ cxor :: Cbool a -> Cbool a -> Cbool a
 cxor x y = x (cnot y) y
 ```
 
-## Church Number
+# Church Number
 Church Number 编码了自然数及它的运算。
 
-### Peano 公理
+## Peano 公理
 Peano 公理定义了自然数。其他自然数之上的运算与关系都可由其推出。
 
 **公理 b1. Peano 公理**
@@ -165,7 +161,7 @@ $$ \exists e \in \mathbb{N}, \forall n \in \mathbb{N}, n^+ \neq e; (3) $$
 $$ \forall S \subseteq \mathbb{N}, e \in S \land (\forall s \in S \to s^+ \in S) \to S = \mathbb{N}. (4) $$
 并且我们称 $\mathbb{N}$ 为自然数集，$x^+$ 为后继关系，$e = 0, e^+ = 1, (e^+)^+ = 2, ...$
 
-### 将自然数编码
+## 将自然数编码
 可以看到，自然数定义中的基本元素是自然数 $e$（即 $0$） 与后继运算 $x^+$。
 
 **定义 b2. 自然数集元素的 Church Number**
@@ -197,7 +193,7 @@ two s z = s (s z)
 -- ...
 ```
 
-### 加法
+## 加法
 自然数加法及证明略。
 
 **定义 b3. Church Number 的加法**
@@ -211,7 +207,7 @@ cadd :: Cnum a -> Cnum a -> Cnum a
 cadd x y s z = x s (y s z)
 ```
 
-### 乘法
+## 乘法
 自然数乘法及证明略。
 
 **定义 b4. Church Number 的乘法**
@@ -225,7 +221,7 @@ cmul :: Cnum a -> Cnum a -> Cnum a
 cmul x y s = x (y s)
 ```
 
-### 幂
+## 幂
 自然数幂及证明略。
 
 回顾一下，Church Number 的类型是：
@@ -288,9 +284,9 @@ $$ = (C_2(\lambda z. z^{++++}) ))0 $$
 $$ = (\lambda z.z^{++++++++})0 $$
 $$ = 8. $$
 
-### 减法
+## 减法
 等有时间再填.jpg
 
-## 可以做的 Codewars 题
+# 可以做的 Codewars 题
 - [Church Booleans (5 kyu)](https://www.codewars.com/kata/5ac739ed3fdf73d3f0000048)
 - [Church Numbers - Add, Multiply, Exponents (3 kyu)](https://www.codewars.com/kata/55c0c452de0056d7d800004d)
