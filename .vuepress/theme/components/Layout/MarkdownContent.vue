@@ -1,5 +1,5 @@
 <template>
-    <section class="content">
+    <section class="content" lang="zh-CN">
         <div class="content-metadata">
             Posted
             <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
@@ -121,6 +121,10 @@
 
 .content em {
     font-family: KaTeX_Main, han-kaiti, serif;
+}
+
+.content em:lang(zh) {
+    font-style: normal;
 }
 
 .content strong {
