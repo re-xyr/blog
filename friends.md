@@ -22,3 +22,4 @@ notPost: true
 <Friend title="EtherealBot" name="Ethereal黑猫" href="http://tangbot.cn/" />
 <Friend title="DiB Blog" name="DiB (DinnerBone)" href="https://dimerbone.github.io" />
 <Friend title="SkinCrab's Blog" name="SkinCrab" href="https://skina.cn/" />
+<Friend title="Fawdlstty 的博客" name="Fawdlstty" href="http://www.fawdlstty.com/" />
