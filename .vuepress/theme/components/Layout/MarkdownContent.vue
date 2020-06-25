@@ -1,5 +1,23 @@
 <template>
     <section class="content">
+        <div class="content-metadata">
+            Posted
+            <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
+                on {{new Date($page.frontmatter.date).toLocaleDateString()}}
+            </template>
+            <template v-else>
+                in the distant past
+            </template>
+            under
+            <template v-if="$page.frontmatter.category instanceof Array && $page.frontmatter.category.length > 0">
+                <template v-if="$page.frontmatter.category.length === 1">category</template>
+                <template v-else>categories</template>
+                <a v-for="cat in $page.frontmatter.category" :href="`/category/${cat}`">{{ cat }}</a>
+            </template>
+            <template v-else>
+                no categories
+            </template>
+        </div>
         <Content />
         <blockquote class="content-end" v-if="!$page.frontmatter.notPost">
             <p>
@@ -14,6 +32,17 @@
 </template>
 
 <style>
+.content-metadata {
+    font-size: .7em;
+    color: gray;
+}
+
+.content-metadata a {
+    color: gray !important;
+    text-decoration: underline !important;
+    margin-right: .3em;
+}
+
 .content .header-anchor {
     text-decoration: none;
     color: #aaa !important;
