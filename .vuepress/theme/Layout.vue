@@ -83,9 +83,10 @@
     main {
         padding-top: 1em;
     }
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 768px) {
         .layout {
             padding: 0 1em;
+            margin: 1em auto;
         }
     }
 </style>
