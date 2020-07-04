@@ -13,7 +13,7 @@
 <style scoped>
 .footer {
     color: gray;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 </style>
 

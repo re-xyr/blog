@@ -3,7 +3,7 @@ const Katex = require('katex')
 
 module.exports = {
     title: '喵.世界',
-    description: 'Life is a chain of moments of enjoyment, not only about survival.',
+    description: 'Not yet typed nor functional.',
     head: [
         ['link', {
             rel: 'stylesheet',
@@ -15,6 +15,12 @@ module.exports = {
     plugins: [
         [
             '@vuepress/blog', {
+                comment: {
+                    // Which service you'd like to use
+                    service: 'disqus',
+                    // The owner's name of repository to store the issues and comments.
+                    shortname: 'vuepress-plugin-blog',
+                },
                 directories: [
                     {
                         id: 'post',

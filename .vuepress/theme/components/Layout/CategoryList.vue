@@ -6,16 +6,14 @@
             v-for="cat in list.sort(({ name: a }, { name: b }) => a > b ? 1 : -1)"
             :href="cat.path"
         >
-            {{ cat.name }}
+            &rightarrow; {{ cat.name }}
         </a>
     </section>
 </template>
 
 <style scoped>
-section {
-    padding-top: 1em;
-}
 .item {
+    font-size: 1.5em;
     padding: .3em;
     display: block;
 }

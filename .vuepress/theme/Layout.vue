@@ -7,7 +7,7 @@
                 </main>
             </template>
             <template v-else-if="$pagination">
-                <Header :title="$site.title" :isMain="true" />
+                <Header :title="$site.title" />
                 <main>
                     <PageList :pages="$pagination.pages" />
                     <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>

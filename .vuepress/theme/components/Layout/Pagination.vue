@@ -1,11 +1,8 @@
 <template>
     <section class="pagination">
-        <div class="anchor" v-if="prev">
-            <a :href="prev">&laquo; Prev</a>
-        </div>
-        <div class="anchor" v-if="next">
-            <a :href="next">Next &raquo;</a>
-        </div>
+        <div class="pagination-end" v-if="!next">— You've reached the very beginning of the timeline. —</div>
+        <a :href="prev" v-if="prev">&leftarrow; Newer</a>
+        <a :href="next" v-if="next">oldeR &rightarrow;</a>
     </section>
 </template>
 
@@ -13,7 +10,10 @@
 .pagination {
     color: gray;
     text-align: center;
-    padding-top: 3em;
+}
+
+.pagination-end {
+    font-size: .6em;
 }
 </style>
 

@@ -3,7 +3,7 @@
         <h1 class="header-title">
             <span>{{ title }}</span>
         </h1>
-        <a v-if="!isMain" href="/"><strong>back</strong></a>
+        <a v-if="$route.path != '/'" href="/"><strong>back</strong></a>
         <a href="/aboutme">about</a>
         <a href="/category">categories</a>
         <a href="/friends">friends</a>
@@ -21,6 +21,6 @@
 <script>
 export default {
     name: 'Header',
-    props: ['title', 'isMain'],
+    props: ['title'],
 }
 </script>

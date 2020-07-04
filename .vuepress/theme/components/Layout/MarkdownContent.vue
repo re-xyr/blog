@@ -1,5 +1,5 @@
 <template>
-    <section class="content" lang="zh-CN">
+    <section class="content">
         <div class="content-metadata">
             Posted
             <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
@@ -78,7 +78,25 @@
 }
 
 .content h1 {
-    font-size: 2em;
+    font-size: 1.6em;
+}
+.content h2 {
+    font-size: 1.4em;
+}
+.content h3 {
+    font-size: 1.2em;
+}
+.content h4 {
+    font-size: 1em;
+}
+.content h5 {
+    font-size: 1em;
+    font-weight: normal;
+}
+.content h6 {
+    font-size: .9em;
+    color: gray;
+    font-weight: normal;
 }
 
 .content a {
@@ -121,10 +139,6 @@
 
 .content em {
     font-family: KaTeX_Main, han-kaiti, serif;
-}
-
-.content em:lang(zh) {
-    font-style: normal;
 }
 
 .content strong {
