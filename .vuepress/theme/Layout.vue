@@ -7,7 +7,7 @@
                 </main>
             </template>
             <template v-else-if="$pagination">
-                <Header :title="$site.title" />
+                <Header :title="'喵.世界'" />
                 <main>
                     <PageList :pages="$pagination.pages" />
                     <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>

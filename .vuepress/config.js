@@ -2,8 +2,8 @@ const MarkdownIt = require('markdown-it')
 const Katex = require('katex')
 
 module.exports = {
-    title: '喵.世界',
-    description: 'Not yet typed nor functional.',
+    title: 'Xy Ren\'s blog',
+    description: 'The blog of Xy Ren.',
     head: [
         ['link', {
             rel: 'stylesheet',
@@ -15,12 +15,6 @@ module.exports = {
     plugins: [
         [
             '@vuepress/blog', {
-                comment: {
-                    // Which service you'd like to use
-                    service: 'disqus',
-                    // The owner's name of repository to store the issues and comments.
-                    shortname: 'vuepress-plugin-blog',
-                },
                 directories: [
                     {
                         id: 'post',
