@@ -39,7 +39,7 @@
 
 .content h1 {
     font-family: KaTeX_Main, han-songti, serif;
-    padding: 3em 0;
+    padding: 2em 0;
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;

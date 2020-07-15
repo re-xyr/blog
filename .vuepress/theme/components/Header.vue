@@ -8,7 +8,7 @@
             <a href="/category">categories</a>
             <a href="/friends">friends</a>
         </div>
-        <div v-else-if="!$frontmatterKey && !$pagination" class="content-metadata">
+        <div v-else-if="!$frontmatterKey && !$pagination && !$page.frontmatter.notPost" class="content-metadata">
             Posted
             <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
                 on {{new Date($page.frontmatter.date).toLocaleDateString()}}
