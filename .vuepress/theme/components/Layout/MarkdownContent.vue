@@ -1,52 +1,12 @@
 <template>
     <section class="content">
-        <div class="content-metadata">
-            Posted
-            <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
-                on {{new Date($page.frontmatter.date).toLocaleDateString()}}
-            </template>
-            <template v-else>
-                in the distant past
-            </template>
-            under
-            <template v-if="$page.frontmatter.category instanceof Array && $page.frontmatter.category.length > 0">
-                <template v-if="$page.frontmatter.category.length === 1">category</template>
-                <template v-else>categories</template>
-                <a v-for="cat in $page.frontmatter.category" :href="`/category/${cat}`">{{ cat }}</a>
-            </template>
-            <template v-else>
-                no categories
-            </template>
-        </div>
         <Content />
-        <blockquote class="content-end" v-if="!$page.frontmatter.notPost">
-            <p>
-                本作品应用
-                <a href="https://creativecommons.org/licenses/by/4.0/">知识共享 署名 4.0 国际协议</a>。
-                <br />
-                The work is published under a
-                <a href="https://creativecommons.org/licenses/by/4.0/">Createive Commons 4.0 Attribution 4.0 International License</a>.
-            </p>
-        </blockquote>
     </section>
 </template>
 
 <style>
-.content-metadata {
-    font-size: .7em;
-    color: gray;
-}
-
-.content-metadata a {
-    color: gray !important;
-    text-decoration: underline !important;
-    margin-right: .3em;
-}
-
 .content .header-anchor {
-    text-decoration: none;
-    color: #aaa !important;
-    font-weight: 100;
+    display: none;
 }
 
 .content ul,
@@ -78,25 +38,50 @@
 }
 
 .content h1 {
-    font-size: 1.6em;
+    font-family: KaTeX_Main, han-songti, serif;
+    padding: 3em 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 .content h2 {
-    font-size: 1.4em;
+    font-family: KaTeX_Main, han-kaiti, serif;
+    padding: 2em 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.3em;
 }
 .content h3 {
-    font-size: 1.2em;
+    font-family: KaTeX_Main, han-songti, serif;
+    padding: 1em 0 1em 1em;
+    font-weight: normal;
+    font-size: 1.1em;
 }
 .content h4 {
+    font-family: KaTeX_Main, han-songti, serif;
+    padding: 1em 0 1em 1em;
+    font-weight: normal;
     font-size: 1em;
+    color: #777;
 }
 .content h5 {
-    font-size: 1em;
-    font-weight: normal;
+    display: none;
 }
 .content h6 {
-    font-size: .9em;
-    color: gray;
-    font-weight: normal;
+    display: none;
+}
+
+.content hr {
+    border: none;
+    margin: 0;
+}
+
+.content hr::before {
+    content: '* * *';
+    display: block;
+    text-align: center;
+    margin-top: .5em;
+    color: #aaa;
 }
 
 .content a {
@@ -114,7 +99,6 @@
 .content code {
     font-family: KaTeX_Typewriter;
 }
-
 .content blockquote {
     font-family: KaTeX_Main, han-fangsong, serif;
     padding-left: 1em;
@@ -145,15 +129,15 @@
     font-family: KaTeX_Main, han-heiti, sans-serif;
 }
 
-.content-end {
-    font-family: sans-serif;
-    text-align: center;
-    color: gray;
-    font-size: 0.7em;
-}
-
 .content-footerlink {
     padding-right: .5em;
+}
+
+.license {
+    text-align: center;
+}
+.license a {
+    color: gray !important;
 }
 </style>
 

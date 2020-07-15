@@ -1,12 +1,8 @@
 <template>
     <div class="footer">
-        &copy; {{ new Date().getFullYear() }} Xy Ren. /
-        <a href="/rss.xml">RSS</a> /
-        <a href="/feed.atom">Atom</a> /
-        <a href="/feed.json">JSON</a>
-        <br />
-        <a href="https://github.com/xy-ren/blog">Website built by Xy Ren with ❤</a> under a <a href="https://github.com/xy-ren/blog/blob/master/LICENSE">MIT License</a>. /
-        <a href="https://vuepress.vuejs.org">Powered by VuePress.</a>
+        &copy; {{ new Date().getFullYear() }} Xy Ren. <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.
+        <a href="/feed" name="RSS">Feed</a>.
+        <a href="https://github.com/xy-ren/blog">Source</a>.
     </div>
 </template>
 
