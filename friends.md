@@ -11,6 +11,7 @@ notPost: true
 <Friend title="黄瓜养殖基地" name="清纯的小黄瓜" href="http://blog.ggemo.com/" />
 <Friend title="Intermediate Representation" name="Tesla Ice Zhang (ice1000)" href="https://ice1000.org/" />
 <Friend title="落雪蜜罐" name="Yuki Chiyoda" href="http://me.ooo.cat/" />
+<Friend title="布丁的博客" name="包布丁" href="http://bdbai.22web.org/blog/" />
 
 <br />
 <hr />
