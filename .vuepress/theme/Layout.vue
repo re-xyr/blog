@@ -28,9 +28,11 @@
     @font-face {
         font-family: han-songti;
         src:
+            local('Source Han Serif SC'),
             local('Source Han Serif'),
+            local('Noto Serif CJK SC'),
             local('Noto Serif CJK'),
-            local('Adobe Song Std')
+            local('Adobe Song Std'),
             local('STZhongsong'),
             local('Songti SC'),
             local('STSong'),
@@ -46,9 +48,11 @@
     @font-face {
         font-family: han-heiti;
         src:
+            local('Source Han Sans SC'),
             local('Source Han Sans'),
+            local('Noto Sans CJK SC'),
             local('Noto Sans CJK'),
-            local('Adobe Heiti Std')
+            local('Adobe Heiti Std'),
             local('PingFang SC'),
             local('Microsoft YaHei'),
             local('STHeiti'),
