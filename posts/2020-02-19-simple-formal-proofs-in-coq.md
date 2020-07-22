@@ -2,8 +2,9 @@
 title: 在 Coq 中使用归纳法验证数学命题
 date: Wed Feb 19 2020 23:13:10 GMT+0800 (GMT+08:00)
 category:
-    - 函数式
-    - 数学
+    - 形式化
+    - 编程语言
+    - Coq
 ---
 
 > **Reference.** *Software Foundations Volume 1: Logical Foundations (Chap. 1, 2)*, Benjamin C Pierce et al. 
