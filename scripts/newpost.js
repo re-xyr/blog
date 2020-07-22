@@ -15,7 +15,6 @@ hidden: true # delete this before publishing
 ---
 
 
-
 `
 
 createWriteStream(filename).write(template)
