@@ -97,7 +97,7 @@
 
 .content pre,
 .content code {
-    font-family: KaTeX_Typewriter;
+    font-family: Iosevka, "Iosevka Slab", "Fira Code", "Operator Mono Lig", "Operator Mono SSm Lig", PragmataPro, Menlo, Monaco, Consolas, KaTeX_Typewriter, monospace;
 }
 .content blockquote {
     font-family: KaTeX_Main, han-fangsong, serif;
