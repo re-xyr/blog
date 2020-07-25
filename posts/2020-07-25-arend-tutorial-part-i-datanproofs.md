@@ -8,6 +8,8 @@ category:
   - 翻译
 ---
 
+*本文翻译自* [Arend Tutorial, Part I, Indexed Data Types](https://arend-lang.github.io/documentation/tutorial/PartI/datanproofs) *，原作者为 [JetBrains Research HoTT and Dependent Types Group (V. Isaev and F. Part)](https://github.com/arend-lang)。原作品在 Apache 2.0 协议下发表。*
+
 在本章里，我们将会通过一系列定义和证明的例子来解释先前我们讨论过的一些概念。
 
 我们将定义函数 `sort`，他通过插入排序来排序列表；我们还将定义函数 `reverse` 来翻转列表。
