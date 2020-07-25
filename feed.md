@@ -3,6 +3,6 @@ title: Feed
 notPost: true
 ---
 
-- [RSS](/feed.xml)
+- [RSS](/rss.xml)
 - [Atom](/feed.atom)
 - [JSON](/feed.json)
