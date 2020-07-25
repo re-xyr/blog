@@ -4,7 +4,7 @@ const [, , name, title] = process.argv
 
 const date = new Date()
 
-const filename = `${__dirname}/../posts/${date.toISOString().slice(0, 10)}-${name}.md`
+const filename = `${__dirname}/../posts/${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}-${name}.md`
 
 const template =
 `---
