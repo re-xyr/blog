@@ -198,30 +198,3 @@ Arend 是基于 Martin-Lof 类型论的一个变种而开发的。这类理论�
 > 练习 13：证明 2 * 2 等于 4。
 
 > 练习 14：证明列表串接的结合性。
-
-# 附. 术语表
-
-本翻译版本所使用的术语表。一些不确定是否该如此翻译的术语标*号，等待后续改正。
-
-- Curry-Howard correspondence：柯里-霍华德对应
-- connective：连接词
-- absurd：荒谬
-- imply：蕴涵
-- conjunction：合取
-- disjunction：析取
-- sum type：和类型
-- intuitionistic：直觉（的）
-- law of excluded middle：排中律
-- double negation：双重否定
-- eliminate：消去
-- Russell's paradox：罗素悖论
-- contradiction：矛盾
-- Cantor's theorem：康托尔定理
-- quantifier：量词
-- predicate：谓词
-- reflexivity：自反（性）
-- negation：否定、反命题
-- *identity type：相等类型
-- goal：目标
-- assocative：结合（的）
-- concatenate：串接

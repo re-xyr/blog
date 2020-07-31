@@ -2,8 +2,8 @@ const MarkdownIt = require('markdown-it')
 const Katex = require('katex')
 
 module.exports = {
-    title: 'Xy Ren\'s blog',
-    description: 'The blog of Xy Ren.',
+    title: '喵.世界',
+    description: 'The blog of xy',
     head: [
         ['link', {
             rel: 'stylesheet',

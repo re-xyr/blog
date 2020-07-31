@@ -212,23 +212,3 @@ category:
 > 练习 7：定义类型 `CTree A n` 为所有高度恰为 `n` 的满二叉树，其中叶子节点的高度为 `0`，所有非叶子节点都存储一个值。
 
 > 练习 8：定义类型 `Tree A n` 为所有高度最多为 `n` 的二叉树，其中叶子节点的高度为 `0`，所有非叶子节点都存储一个值。同时，定义一个函数来计算树的高度。
-
-# 附. 术语表
-
-本翻译版本所使用的术语表。一些不确定是否该如此翻译的术语标*号，等待后续改正。
-
-- insertion sort：插入排序
-- involution：对合
-- vector：向量
-- reverse：翻转
-- reduce：归约
-- index：索引
-- named：具名（的）
-- subtype：子类型
-- embed：嵌入
-- matrix：矩阵
-- diagonal：对角
-- height：（树的）高度
-- binary tree：二叉树
-- internal node：非叶子节点
-- leaf：叶子（节点）

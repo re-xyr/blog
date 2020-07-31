@@ -3,27 +3,17 @@
         <h1 class="header-title">
             <a href="/">{{ title }}</a>
         </h1>
-        <div v-if="$route.path === '/'" class="header-aside">
+        <div v-if="isHomepage" class="header-aside">
             <a href="/aboutme">about</a>
             <a href="/category">categories</a>
             <a href="/friends">friends</a>
         </div>
-        <div v-else-if="!$frontmatterKey && !$pagination && !$page.frontmatter.notPost" class="content-metadata">
-            Posted
+        <div v-if="showMetadata" class="content-metadata">
             <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
-                on {{new Date($page.frontmatter.date).toLocaleDateString()}}
+                {{new Date($page.frontmatter.date).toLocaleDateString()}}
             </template>
-            <template v-else>
-                in the distant past
-            </template>
-            under
             <template v-if="$page.frontmatter.category instanceof Array && $page.frontmatter.category.length > 0">
-                <template v-if="$page.frontmatter.category.length === 1">category</template>
-                <template v-else>categories</template>
                 <a v-for="cat in $page.frontmatter.category" :href="`/category/${cat}`">{{ cat }}</a>
-            </template>
-            <template v-else>
-                no categories
             </template>
         </div>
     </header>
@@ -40,9 +30,14 @@
         text-decoration: none;
     }
 
+    .header-aside {
+        text-align: right;
+    }
+
     .content-metadata {
         font-size: .7em;
         color: gray;
+        text-align: right;
     }
 
     .content-metadata a {
@@ -56,6 +51,6 @@
 <script>
 export default {
     name: 'Header',
-    props: ['title'],
+    props: ['title', 'isHomepage', 'showMetadata'],
 }
 </script>

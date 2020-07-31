@@ -1,25 +1,21 @@
 <template>
     <div class="layout">
-            <template v-if="$frontmatterKey">
-                <Header title="Categories" />
-                <main>
-                    <CategoryList :list="$frontmatterKey.list" />
-                </main>
-            </template>
-            <template v-else-if="$pagination">
-                <Header :title="'喵.世界'" />
-                <main>
-                    <PageList :pages="$pagination.pages" />
-                    <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>
-                </main>
-            </template>
-            <template v-else>
-                <Header :title="$frontmatter.title" />
-                <main>
-                    <MarkdownContent />
-                </main>
-            </template>
+        <Header v-if="$route.path === '/' || $route.path.startsWith('/page')" title="喵.世界" :isHomepage="true" />
+        <Header v-else-if="$route.path === '/category/'" title="Categories" :isHomepage="true" />
+        <Header v-else-if="/^\/category\/.*$/.test($route.path)" :title="$route.path.match(/^\/category\/(.*)\/$/)[1]" :isHomepage="true" />
+        <Header v-else :title="$frontmatter.title" :showMetadata="!$frontmatterKey && !$pagination && !$page.frontmatter.notPost" />
+
+        <main v-if="$frontmatterKey">
+            <CategoryList :list="$frontmatterKey.list" />
         </main>
+        <main v-else-if="$pagination">
+            <PageList :pages="$pagination.pages" />
+            <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>
+        </main>
+        <main v-else>
+            <MarkdownContent />
+        </main>
+        
         <Footer />
     </div>
 </template>
@@ -70,6 +66,11 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+    }
+    .unvisited {
+        font-size: .7em;
+        text-align: center;
+        cursor: pointer;
     }
     a {
         color: inherit;
