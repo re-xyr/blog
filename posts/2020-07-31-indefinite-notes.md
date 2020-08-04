@@ -1,5 +1,5 @@
 ---
-title: 抽象废话
+title: Abstract Nonsense
 date: Fri Jul 31 2020 21:29:40 GMT+0800 (GMT+08:00)
 category:
   - 类型论

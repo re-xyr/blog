@@ -6,53 +6,30 @@ notPost: true
 ## me
 
 ### name
-- xy
+- xy(r)
 - $\xi$
 
 ### mail
-- [r_xy@foxmail.com](mailto:xy.r@outlook.com)
-
-### love
-- PL, types etc
-- crossdressing
-- developing
-- warmth among people
-
-### like
-- anime
-- Touhou
-- vtuber
-- rhythm games
-
-### hate
-- politics
+- [xy.r@outlook.com](mailto:xy.r@outlook.com)
 
 ### links
-- [https://github.com/xy-ren](https://github.com/xy-ren)
+- [https://github.com/re-xyr](https://github.com/re-xyr)
 
 ## site
 
 ### copy
-- All original contents published on http://喵.世界, including textual and non-textual, but not including the source code, are licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/), unless explicitly specified.
+- All original contents published on http://喵.世界, including textual and non-textual, are licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/), unless explicitly specified.
 
 ### feed
 - [rss](/rss.xml)
 - [atom](/feed.atom)
 - [json feed](/feed.json)
 
-### style
-- any Songti possible for Chinese, CMU Serif Roman for Latin-based
-- trying to be as simple as possible
-
 ### source
-- [xy-ren/blog](https://github.com/xy-ren/blog)
-- The source code of the site http://喵.世界, excluding the original contents under the directories `/posts` and `.vuepress/public`, are licensed under a [MIT License](https://github.com/xy-ren/blog/blob/master/LICENSE).
+- All rights reserved
 
 ### age
 - since Aug 2019
 
 ### misc
 - this about page is inspired by [agaric](https://b.agaric.net/about)
-
-### domain
-- it's cute isn't it

@@ -26,5 +26,5 @@ jobs:
         git config user.name "Xy Ren via GitHub Actions"
         git add *
         git commit -m "GitHub Actions Automated Deploy"
-        git remote add origin-gh-pages "https://$GH_TOKEN@github.com/xy-ren/xy-ren.github.io.git"
+        git remote add origin-gh-pages "https://$GH_TOKEN@github.com/re-xyr/re-xyr.github.io.git"
         git push --force --set-upstream origin-gh-pages master

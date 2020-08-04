@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xy-ren/blog.git"
+    "url": "git+https://github.com/re-xyr/blog.git"
   },
-  "author": "t532",
-  "license": "MIT",
+  "author": "xyr",
+  "license": "All rights reserved",
   "bugs": {
-    "url": "https://github.com/xy-ren/blog/issues"
+    "url": "https://github.com/re-xyr/blog/issues"
   },
-  "homepage": "https://github.com/xy-ren/blog#readme",
+  "homepage": "https://github.com/re-xyr/blog#readme",
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.2",
     "katex": "^0.11.1",

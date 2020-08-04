@@ -6,7 +6,6 @@
         <div v-if="isHomepage" class="header-aside">
             <a href="/aboutme">about</a>
             <a href="/category">categories</a>
-            <a href="/friends">friends</a>
         </div>
         <div v-if="showMetadata" class="content-metadata">
             <template v-if="$page.frontmatter.date && new Date($page.frontmatter.date).toString() !== 'Invalid Date'">
