@@ -1,14 +1,11 @@
 <template>
     <div class="layout">
-        <Header v-if="$route.path === '/' || $route.path.startsWith('/page')" title="喵.世界" :isHomepage="true" />
-        <Header v-else-if="$route.path === '/category/'" title="Categories" :isHomepage="true" />
-        <Header v-else-if="/^\/category\/.*$/.test($route.path)" :title="$route.path.match(/^\/category\/(.*)\/$/)[1]" :isHomepage="true" />
-        <Header v-else :title="$frontmatter.title" :showMetadata="!$frontmatterKey && !$pagination && !$page.frontmatter.notPost" />
+        <Header :title="$frontmatter.title" :showMetadata="!$frontmatter.notPost" />
 
-        <main v-if="$frontmatterKey">
+        <main v-if="$frontmatter.layout === 'FrontmatterKey'">
             <CategoryList :list="$frontmatterKey.list" />
         </main>
-        <main v-else-if="$pagination">
+        <main v-else-if="$frontmatter.layout == 'FrontmatterPagination' || $frontmatter.layout == 'Layout'">
             <PageList :pages="$pagination.pages" />
             <Pagination :prev="$pagination.prevLink" :next="$pagination.nextLink"/>
         </main>
@@ -62,6 +59,19 @@
             local('STFangsong'),
             local('FangSong');
     }
+    @font-face {
+        font-family: preferred-mono;
+        src:
+            local('Iosevka'),
+            local("Iosevka Slab"),
+            local("Fira Code"),
+            local("Operator Mono Lig"),
+            local("Operator Mono SSm Lig"),
+            local("PragmataPro"),
+            local("Menlo"),
+            local("Monaco"),
+            local("Consolas");
+    }
     * {
         box-sizing: border-box;
         margin: 0;
@@ -81,9 +91,15 @@
         padding: 0 3em;
         margin: 3em auto;
         max-width: 1000px;
-        font-size: 1.2em;
         line-height: 1.5em;
         background-color: white;
+    }
+    .dim-anchor {
+        color: gray;
+        text-decoration: none;
+    }
+    .dim-anchor:hover {
+        color: black;
     }
     main {
         padding-top: 1em;

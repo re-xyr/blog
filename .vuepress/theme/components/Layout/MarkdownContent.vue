@@ -1,12 +1,30 @@
 <template>
-    <section class="content">
-        <Content />
+    <section>
+        <div v-if="!$frontmatter.notPost" class="content-metadata">
+            <template v-if="$frontmatter.date && new Date($frontmatter.date).toString() !== 'Invalid Date'">
+                {{new Date($frontmatter.date).toLocaleDateString()}}
+            </template>
+            <template v-if="$frontmatter.category instanceof Array && $frontmatter.category.length > 0">
+                <a class="dim-anchor" v-for="cat in $frontmatter.category" :href="`/category/${cat}`">{{ cat }}</a>
+            </template>
+        </div>
+        <Content class="content" />
     </section>
 </template>
 
 <style>
 .content .header-anchor {
     display: none;
+}
+
+.content-metadata {
+    font-size: .7em;
+    color: gray;
+    text-align: right;
+}
+
+.content-metadata a {
+    margin-right: .3em;
 }
 
 .content ul,
@@ -97,7 +115,7 @@
 
 .content pre,
 .content code {
-    font-family: Iosevka, "Iosevka Slab", "Fira Code", "Operator Mono Lig", "Operator Mono SSm Lig", PragmataPro, Menlo, Monaco, Consolas, KaTeX_Typewriter, monospace;
+    font-family: preferred-mono, KaTeX_Typewriter, monospace;
 }
 .content blockquote {
     font-family: KaTeX_Main, han-fangsong, serif;

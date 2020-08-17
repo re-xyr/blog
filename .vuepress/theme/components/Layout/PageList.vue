@@ -9,7 +9,7 @@
                     <span
                         class="item-metadata-category-item"
                         v-for="cat in page.frontmatter.category">
-                        <a :href="`/category/${cat}`">{{ cat }}</a>
+                        <a class="dim-anchor" :href="`/category/${cat}`">{{ cat }}</a>
                     </span>
                 </span>
                 <span class="item-date">{{ new Date(page.frontmatter.date).toLocaleDateString() }}</span>

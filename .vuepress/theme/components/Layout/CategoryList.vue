@@ -1,12 +1,12 @@
 <template>
     <section>
         <a
-            class="item"
+            class="item dim-anchor"
             :class="/.+:/.test(cat.name) ? 'catlist-special' : ''"
             v-for="cat in list.sort(({ name: a }, { name: b }) => a > b ? 1 : -1)"
             :href="cat.path"
         >
-            &rightarrow; {{ cat.name }}
+            {{ cat.name }}
         </a>
     </section>
 </template>

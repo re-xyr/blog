@@ -1,5 +1,5 @@
 <template>
-    <div class="unfinished" v-if="!next">— This article is unfinished. —</div>
+    <div class="unfinished">— This article is unfinished. —</div>
 </template>
 
 <style scoped>

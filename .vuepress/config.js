@@ -3,7 +3,7 @@ const Katex = require('katex')
 
 module.exports = {
     title: '喵.世界',
-    description: 'The blog of xy',
+    description: 'The blog of xyr',
     head: [
         ['link', {
             rel: 'stylesheet',
@@ -17,13 +17,13 @@ module.exports = {
             '@vuepress/blog', {
                 directories: [
                     {
-                        id: 'post',
+                        id: 'Post',
                         dirname: 'posts',
-                        path: '/',
+                        path: '/post/',
                     },
                 ], frontmatters: [
                     {
-                        id: 'category',
+                        id: 'Category',
                         keys: ['category'],
                         path: '/category/',
                         layout: 'FrontmatterIndex',
@@ -42,9 +42,9 @@ module.exports = {
                 MarkdownIt.prototype.render.call(
                     md,
                     src
-                    .replace(/\$\$(.+?)\$\$/g, (_, str) =>
+                    .replace(/\(\(\$([^]+?)\)\)/mg, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: true }))
-                    .replace(/\$(.+?)\$/g, (_, str) =>
+                    .replace(/\(\$([^]+?)\)/mg, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: false })),
                     env)
         },

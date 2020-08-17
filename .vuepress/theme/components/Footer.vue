@@ -1,17 +1,19 @@
 <template>
     <div class="footer">
-        <a href="/aboutme.html#copy">&copy;</a>
+        <a class="dim-anchor" href="/aboutme.html#copy">&copy;</a>
+        <div class="footer-href">
+            <a class="dim-anchor" :href="$route.path">http://喵.世界{{ $route.path }}</a>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .footer {
     margin-top: 1em;
-    text-align: center;
+    text-align: right;
 }
-.footer a {
-    color: gray;
-    text-decoration: none;
+.footer-href {
+    font-size: .7em;
 }
 </style>
 
