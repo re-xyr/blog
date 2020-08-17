@@ -3,7 +3,7 @@ title: Index
 notPost: true
 ---
 
-<div style="color: #ddd">
+<div class="fancy">
 (($
 \frac {
   \Gamma \vdash Y : \mathcal U \qquad \Gamma, n : Y \vdash A(n) : \mathcal U
@@ -63,5 +63,18 @@ notPost: true
 ({\bf K})
 ))
 </div>
+
+<style>
+.fancy {
+  color: #ddd;
+  animation: fancy 10s infinite;
+}
+
+@keyframes fancy {
+  0% { opacity: 1 }
+  80% { opacity: 0.5 }
+  100% { opacity: 1 } 
+}
+</style>
 
 <br />

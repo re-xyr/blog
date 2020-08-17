@@ -93,6 +93,11 @@
         max-width: 1000px;
         line-height: 1.5em;
         background-color: white;
+        animation: fade .3s;
+    }
+    @keyframes fade {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
     }
     .dim-anchor {
         color: gray;
