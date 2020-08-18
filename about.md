@@ -32,6 +32,8 @@ notPost: true
 
 ### source
 - All rights reserved
+- Ask me before you use
+- [Guide](/guide)
 
 ### age
 - since Aug 2019

@@ -4,7 +4,7 @@
             <a href="/">{{ title }}</a>
         </h1>
         <div class="header-aside">
-            <a class="dim-anchor" href="/aboutme">about</a>
+            <a class="dim-anchor" href="/about">about</a>
             <a class="dim-anchor" href="/post">posts</a>
             <a class="dim-anchor" href="/category">categories</a>
         </div>

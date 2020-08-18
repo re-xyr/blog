@@ -1,6 +1,7 @@
 ---
 title: Index
 notPost: true
+hideFooter: true
 ---
 
 <div class="fancy">

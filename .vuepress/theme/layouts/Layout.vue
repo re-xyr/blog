@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <Header :title="$frontmatter.title" />
+        <Header v-if="!$frontmatter.hideHeader" :title="$frontmatter.title" />
 
         <main v-if="$frontmatter.layout === 'FrontmatterKey'">
             <CategoryList :list="$frontmatterKey.list" />
@@ -13,7 +13,7 @@
             <MarkdownContent />
         </main>
         
-        <Footer />
+        <Footer v-if="!$frontmatter.hideFooter" />
     </div>
 </template>
 
