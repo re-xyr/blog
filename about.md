@@ -7,7 +7,7 @@ notPost: true
 
 ### name
 - xy(r)
-- ($\xi)
+- ($\xi$)
 
 ### mail
 - [xy.r@outlook.com](mailto:xy.r@outlook.com)
