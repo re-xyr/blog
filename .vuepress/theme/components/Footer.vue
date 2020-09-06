@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <a class="dim-anchor" href="/aboutme.html#copy">&copy;</a>
+        <a class="dim-anchor" href="/about.html#copy">&copy;</a>
         <div class="footer-href">
             <a class="dim-anchor" :href="$route.path">http://喵.世界{{ $route.path }}</a>
         </div>

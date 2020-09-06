@@ -15,7 +15,14 @@
     header {
         padding: 1em 0;
         border-bottom: solid 1px #ddd;
-        line-height: 2em;
+    }
+    
+    .header-title {
+        font-family: Merriweather, KaTeX_Serif, han-heiti;
+        font-size: 3em;
+        line-height: 1em;
+        padding: 1em 0;
+        font-weight: 300;
     }
 
     .header-title a {

@@ -27,6 +27,10 @@
     margin-right: .3em;
 }
 
+.content {
+    line-height: 1.7em;
+}
+
 .content ul,
 .content ol {
     padding-left: 30px;
@@ -45,8 +49,9 @@
 .content blockquote,
 .content pre {
     margin: 10px 0;
-    line-height: 1.8em;
 }
+
+.content :not(pre)>code { color: gray; }
 
 .content img {
     display: block;
@@ -55,38 +60,37 @@
     max-width: max-content;
 }
 
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    font-family: Merriweather, KaTeX_Serif, han-heiti;
+    font-weight: 700;
+    padding-top: 1em;
+    padding-bottom: .3em;
+}
+
 .content h1 {
-    font-family: KaTeX_Main, han-songti, serif;
-    padding: 2em 0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 .content h2 {
-    font-family: KaTeX_Main, han-kaiti, serif;
-    padding: 2em 0;
-    text-align: center;
-    font-weight: normal;
     font-size: 1.3em;
 }
 .content h3 {
-    font-family: KaTeX_Main, han-songti, serif;
-    padding: 1em 0 1em 1em;
-    font-weight: normal;
     font-size: 1.1em;
 }
 .content h4 {
-    font-family: KaTeX_Main, han-songti, serif;
-    padding: 1em 0 1em 1em;
-    font-weight: normal;
-    font-size: 1em;
-    color: #777;
+    font-size: 0.95em;
 }
 .content h5 {
-    display: none;
+    font-size: 0.95em;
+    color: gray;
 }
 .content h6 {
-    display: none;
+    font-size: 0.75em;
+    color: gray;
 }
 
 .content hr {
@@ -103,11 +107,10 @@
 }
 
 .content a {
-    color: #33a;
+    color: #005;
     transition: .2s;
-    text-decoration: none;
 }
-.content a:visited { color: #a3a; }
+.content a:visited { color: #305; }
 .content a:hover {
     color: #f00;
     text-decoration: underline;
@@ -117,15 +120,18 @@
 .content code {
     font-family: preferred-mono, KaTeX_Typewriter, monospace;
 }
+
 .content blockquote {
-    font-family: KaTeX_Main, han-fangsong, serif;
-    padding-left: 1em;
+    font-family: Merriweather, KaTeX_Main, han-fangsong, serif;
+    padding: 1.5em;
     border-left: 5px solid #aaa;
+    font-style: italic;
     color: gray;
 }
 
 .content table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .content td,
@@ -140,11 +146,11 @@
 }
 
 .content em {
-    font-family: KaTeX_Main, han-kaiti, serif;
+    font-family: Merriweather, KaTeX_Main, han-kaiti, serif;
 }
 
 .content strong {
-    font-family: KaTeX_Main, han-heiti, sans-serif;
+    font-family: Merriweather, KaTeX_Main, han-heiti, sans-serif;
 }
 
 .content-footerlink {
