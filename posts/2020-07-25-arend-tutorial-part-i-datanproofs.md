@@ -3,7 +3,7 @@ title: Arend 教程，第一部分：3. 索引数据类型
 date: Sat Jul 25 2020 07:19:19 GMT+0800 (中国标准时间)
 category:
   - 编程语言
-  - 形式化
+  - 类型论
   - Arend
   - 翻译
 ---

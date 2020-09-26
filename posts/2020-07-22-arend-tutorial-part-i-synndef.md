@@ -3,7 +3,7 @@ title: Arend 教程，第一部分：1. 基础
 date: Wed Jul 22 2020 19:48:19 GMT+0800 (GMT+08:00)
 category:
   - 编程语言
-  - 形式化
+  - 类型论
   - Arend
   - 翻译
 ---
@@ -79,7 +79,7 @@ Arend 在标识符的选择中提供了相当大的自由度。除了一小部�
 -- 参数的类型不能被推断出来，和前面提到的相同
 \func foo' => \lam (x _ : Nat) (_ : Int) => x
 -- 但是如果结果类型被显式指定了，那么参数的类型就可以省略掉
-\func foo'' : Nat -> Nat -> Int -> Nat => \lam x _ _ => x  
+\func foo'' : Nat -> Nat -> Int -> Nat => \lam x _ _ => x
 {- Haskell:
    foo'' :: Nat -> Nat -> Int -> Nat
    foo'' = \x y z -> x
@@ -479,7 +479,7 @@ Arend 在标识符的选择中提供了相当大的自由度。除了一小部�
    \func t => functionModule.f1
    \func t' => functionModule.f2
    \func t'' => (f1, f3)
-     \where \open functionModule(f1,f3) 
+     \where \open functionModule(f1,f3)
 	-- 这个 \open 影响到 t'' 的 \where- 块，同时也影响 t'' 本身
 }
 ```
