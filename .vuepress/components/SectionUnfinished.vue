@@ -1,5 +1,5 @@
 <template>
-    <div class="unfinished">— This article is unfinished. —</div>
+    <div class="unfinished">— This section is unfinished. —</div>
 </template>
 
 <style scoped>
@@ -12,6 +12,6 @@
 
 <script>
 export default {
-    name: 'Unfinished',
+    name: 'SectionUnfinished',
 }
 </script>
