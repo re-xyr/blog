@@ -18,7 +18,6 @@
     }
     
     .header-title {
-        font-family: Merriweather, KaTeX_Serif, han-heiti;
         font-size: 3em;
         line-height: 1em;
         padding: 1em 0;

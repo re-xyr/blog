@@ -1,9 +1,6 @@
 <template>
     <div class="footer">
-        <a class="dim-anchor" href="/about.html#copy">&copy;</a>
-        <div class="footer-href">
-            <a class="dim-anchor" :href="$route.path">http://喵.世界{{ $route.path }}</a>
-        </div>
+        <a class="dim-anchor" href="/about.html#copy">&copy; xy 2019 - {{ new Date().getFullYear() }}</a>
     </div>
 </template>
 
@@ -11,9 +8,6 @@
 .footer {
     margin-top: 1em;
     text-align: right;
-}
-.footer-href {
-    font-size: .7em;
 }
 </style>
 

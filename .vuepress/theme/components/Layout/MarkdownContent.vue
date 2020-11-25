@@ -66,7 +66,7 @@
 .content h4,
 .content h5,
 .content h6 {
-    font-family: Merriweather, KaTeX_Serif, han-heiti;
+    font-family: Merriweather, KaTeX_Serif, han-songti;
     font-weight: 700;
     padding-top: 1em;
     padding-bottom: .3em;
@@ -122,7 +122,6 @@
 }
 
 .content blockquote {
-    font-family: Merriweather, KaTeX_Main, han-fangsong, serif;
     padding: 1.5em;
     border-left: 5px solid #aaa;
     font-style: italic;
@@ -135,18 +134,16 @@
 }
 
 .content td,
-.content th {
-    border: 1px solid #ccc;
+.content th { 
     padding: .5em;
 }
 
-.content thead tr,
-.content tbody tr:nth-child(2n) {
-    background: #e5e5e5;
+.content th {
+    border-bottom: 3px double;
 }
 
-.content em {
-    font-family: Merriweather, KaTeX_Main, han-kaiti, serif;
+.content td {
+    border-bottom: 1px solid;
 }
 
 .content strong {
