@@ -46,11 +46,12 @@ module.exports = {
                 MarkdownIt.prototype.render.call(
                     md,
                     src
-                    .replace(/\(\$\$([^]+?)\$\$\)/mg, (_, str) =>
+                    .replace(/(?<=[^\\])\$\$([^]+?)\$\$/mg, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: true }))
-                    .replace(/\(\$([^]+?)\$\)/mg, (_, str) =>
+                    .replace(/(?<=[^\\])\$([^]+?)\$/mg, (_, str) =>
                         Katex.renderToString(str, { throwOnError: false, displayMode: false })),
                     env)
+                    .replace(/\\\$/g, '$')
         },
     },
 }

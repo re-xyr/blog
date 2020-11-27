@@ -5,7 +5,7 @@ notPost: true
 
 **name.**
 - xy
-- ($\xi$)
+- $\xi$
 
 **mail.**
 - [xy.r@outlook.com](mailto:xy.r@outlook.com)
@@ -29,4 +29,5 @@ notPost: true
 
 **misc.**
 - the style of this site is heavily inspired by [agaric](https://b.agaric.net), [Tesla Ice Zhang](https://ice1000.org) and [Belleve Invis](https://typeof.net)
+- pseudocode fragments will be written in either an agdal-haskellic or a javascripty way, depending on which style is more convenient to use in the context.
 - this domain has been in use since Feb 2020
