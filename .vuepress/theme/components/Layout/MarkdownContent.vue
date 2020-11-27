@@ -14,7 +14,24 @@
 
 <style>
 .content .header-anchor {
-    display: none;
+    color: #0003 !important;
+    text-decoration: none;
+}
+
+.content h2 > .header-anchor::after {
+    content: '#';
+}
+.content h3 > .header-anchor::after {
+    content: '##';
+}
+.content h4 > .header-anchor::after {
+    content: '###';
+}
+.content h5 > .header-anchor::after {
+    content: '####';
+}
+.content h6 > .header-anchor::after {
+    content: '...#';
 }
 
 .content-metadata {
@@ -51,7 +68,10 @@
     margin: 10px 0;
 }
 
-.content :not(pre)>code { color: gray; }
+.content :not(pre)>code {
+    color: gray;
+    font-size: .9em;
+}
 
 .content img {
     display: block;
@@ -73,23 +93,22 @@
 }
 
 .content h1 {
-    font-size: 1.7em;
+    font-size: 2em;
 }
 .content h2 {
-    font-size: 1.3em;
+    font-size: 1.5em
 }
 .content h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 .content h4 {
-    font-size: 0.95em;
+    font-size: 1em;
 }
 .content h5 {
-    font-size: 0.95em;
-    color: gray;
+    font-size: 0.8em;
 }
 .content h6 {
-    font-size: 0.75em;
+    font-size: 0.8em;
     color: gray;
 }
 
@@ -102,7 +121,7 @@
     content: '* * *';
     display: block;
     text-align: center;
-    margin-top: .5em;
+    margin: 3em 0;
     color: #aaa;
 }
 
@@ -113,7 +132,6 @@
 .content a:visited { color: #305; }
 .content a:hover {
     color: #f00;
-    text-decoration: underline;
 }
 
 .content pre,
@@ -121,10 +139,14 @@
     font-family: preferred-mono, KaTeX_Typewriter, monospace;
 }
 
+.content pre {
+    font-size: .9em;
+}
+
 .content blockquote {
-    padding: 1.5em;
-    border-left: 5px solid #aaa;
-    font-style: italic;
+    margin: 1.5em;
+    padding: .2em 1em;
+    border-left: 4px solid #aaa;
     color: gray;
 }
 

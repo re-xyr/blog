@@ -3,7 +3,7 @@ const Katex = require('katex')
 
 module.exports = {
     title: '喵.世界',
-    description: 'The blog of xyr',
+    description: 'ex falso quodlibet.',
     head: [
         ['link', {
             rel: 'stylesheet',
