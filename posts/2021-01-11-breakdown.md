@@ -146,4 +146,8 @@ category:
 
 ---
 
+*Sat Nov 28 2020 20:34:31 GMT+0800 (GMT+08:00)*
+
+你好蠢啊，家长指着你短头发的照片说你帅你还要不开心
+
 <ArticleUnfinished/>
