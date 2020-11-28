@@ -6,11 +6,11 @@ hideFooter: true
 
 $$
 \begin{matrix}
-\ & x & y & z
+\ & n & y & a
 \end{matrix}
 \\
 \begin{matrix}
-x \\ y \\ z
+n \\ y \\ a
 \end{matrix}
 \begin{bmatrix}
 < & ? & ? \\
@@ -56,9 +56,9 @@ $$
 $$
 $$
 \frac {
-  \Gamma \vdash Y : \mathcal U
+  \Gamma \vdash Y : \mathcal U \qquad \Gamma \vdash n, a : Y
 }{
-  \Gamma , n : Y , a : Y \vdash n =_Y a : \mathcal U
+  \Gamma \vdash n =_Y a : \mathcal U
 }
 $$
 $$
