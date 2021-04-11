@@ -5,7 +5,7 @@
                 {{new Date($frontmatter.date).toLocaleDateString()}}
             </template>
             <template v-if="$frontmatter.category instanceof Array && $frontmatter.category.length > 0">
-                <a class="dim-anchor" v-for="cat in $frontmatter.category" :href="`/category/${cat}`">{{ cat }}</a>
+                <a class="dim-anchor" v-for="cat in $frontmatter.category" :key="cat" :href="`/category/${cat}`">{{ cat }}</a>
             </template>
         </div>
         <Content class="content" />

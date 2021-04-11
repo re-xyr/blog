@@ -1,6 +1,6 @@
 <template>
     <section class="pagelist">
-        <div class="item" v-for="page in pages" v-if="!page.frontmatter.hidden">
+        <div class="item" v-for="page in pages.filter(i => !page.frontmatter.hidden)" :key="page.path">
             <a :href="page.path" class="item-link">
                 <div class="item-title">{{ page.frontmatter.title }}</div>
             </a>
@@ -8,7 +8,8 @@
                 <span class="item-category">
                     <span
                         class="item-metadata-category-item"
-                        v-for="cat in page.frontmatter.category">
+                        v-for="cat in page.frontmatter.category"
+                        :key="cat">
                         <a class="dim-anchor" :href="`/category/${cat}`">{{ cat }}</a>
                     </span>
                 </span>
