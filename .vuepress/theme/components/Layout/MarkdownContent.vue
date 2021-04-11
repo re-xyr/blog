@@ -141,13 +141,14 @@
 
 .content pre {
     font-size: .9em;
-    border: dotted 1px gray;
+    border: solid 1px #ddd;
+    border-radius: 0;
     background: none;
 }
 
 .content :not(pre) > code {
-    border: dotted 1px gray;
-    padding: 1px 5px;
+    border: dotted 1px #ccc;
+    padding: 0.1em 0.25em;
     border-radius: 3px;
 }
 
