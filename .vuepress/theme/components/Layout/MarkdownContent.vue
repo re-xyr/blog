@@ -141,6 +141,14 @@
 
 .content pre {
     font-size: .9em;
+    border: dotted 1px gray;
+    background: none;
+}
+
+.content :not(pre) > code {
+    border: dotted 1px gray;
+    padding: 1px 5px;
+    border-radius: 3px;
 }
 
 .content blockquote {

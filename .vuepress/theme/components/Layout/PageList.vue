@@ -1,6 +1,6 @@
 <template>
     <section class="pagelist">
-        <div class="item" v-for="page in pages.filter(i => !page.frontmatter.hidden)" :key="page.path">
+        <div class="item" v-for="page in pages.filter(i => !i.frontmatter.hidden)" :key="page.path">
             <a :href="page.path" class="item-link">
                 <div class="item-title">{{ page.frontmatter.title }}</div>
             </a>

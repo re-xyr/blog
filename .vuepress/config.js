@@ -8,7 +8,6 @@ module.exports = {
         ['link', {
             rel: 'stylesheet',
             href: "https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css",
-            integrity: "sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG",
             crossorigin: "anonymous",
         }],
         ['link', {
@@ -46,10 +45,10 @@ module.exports = {
                 MarkdownIt.prototype.render.call(
                     md,
                     src
-                    .replace(/(?<=[^\\])\$\$([^]+?)\$\$/mg, (_, str) =>
-                        Katex.renderToString(str, { throwOnError: false, displayMode: true }))
-                    .replace(/(?<=[^\\])\$([^]+?)\$/mg, (_, str) =>
-                        Katex.renderToString(str, { throwOnError: false, displayMode: false })),
+                        .replace(/(?<=[^\\])\$\$([^]+?)\$\$/mg, (_, str) =>
+                            Katex.renderToString(str, { throwOnError: false, displayMode: true }))
+                        .replace(/(?<=[^\\])\$([^]+?)\$/mg, (_, str) =>
+                            Katex.renderToString(str, { throwOnError: false, displayMode: false })),
                     env)
                     .replace(/\\\$/g, '$')
         },
