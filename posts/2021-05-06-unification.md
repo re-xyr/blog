@@ -73,13 +73,13 @@ $$
 
 $$
 \cfrac{
-  \Gamma \vdash x \approx' y[a/b]
+  \Gamma \vdash x \approx y[a/b]
 }{
   \Gamma \vdash \lambda a. x \approx' \lambda b. y
 }
 $$
 
-**不行哦。**$\Gamma \vdash x \approx' y[a/b]$ 里面，$\Gamma$ 并不包含 $a$；如果我们想加入 $a$，则必须要得知它的类型；而我们不知道。更糟糕的是，这样一条规则也没办法处理 eta 转换：$f \approx \lambda x. f \, x$ 是无解的！
+**不行哦。**$\Gamma \vdash x \approx y[a/b]$ 里面，$\Gamma$ 并不包含 $a$；如果我们想加入 $a$，则必须要得知它的类型；而我们不知道。更糟糕的是，这样一条规则也没办法处理 eta 转换：$f \approx \lambda x. f \, x$ 是无解的！
 
 ## 类型导向
 
