@@ -46,11 +46,12 @@ module.exports = {
                     md,
                     src
                         .replace(/(?<=[^\\])\$\$([^]+?)\$\$/mg, (_, str) =>
-                            Katex.renderToString(str, { throwOnError: false, displayMode: true }))
+                            Katex.renderToString(str, { throwOnError: false, displayMode: true, output: 'html' }))
                         .replace(/(?<=[^\\])\$([^]+?)\$/mg, (_, str) =>
-                            Katex.renderToString(str, { throwOnError: false, displayMode: false })),
+                            Katex.renderToString(str, { throwOnError: false, displayMode: false, output: 'html' })),
                     env)
                     .replace(/\\\$/g, '$')
+                    .replace(/<code>\s+<span class="katex">(.+?)<\/span>\s+<\/code>/mg, '<span class="katex">$1</span>')
         },
     },
 }
