@@ -25,7 +25,7 @@ $$
 }
 $$
 
-那么，如果我们对于每个语法构造都写一条关于 $\approx$ 的规则，是否就解决了？若我们定义环境内包含某个常量 $\Gamma = \{k = \Pi (x : A). B\}$，那么 $\Gamma \vdash k \approx \Pi (x : A). B$ 还是无解的，因为 $k$ 的构造是「常量」而 $\Pi (x : A). B$ 的构造是「Pi 类型」。这提示我们应该定义：
+那么，如果我们对于每个语法构造都写一条关于 $\approx$ 的规则，是否就解决了？若我们定义环境内包含某个常量 $\Gamma = \{k = \Pi (x : A). B\}$，那么 $\Gamma \vdash k \approx \Pi (x : A). B$ 还是无解的，因为 $k$ 的构造是「常量」而 $\Pi (x : A). B$ 的构造是「Pi 类型」。这提示我们应该添加一个新的定义。
 
 $$
 \cfrac{
@@ -69,7 +69,7 @@ $$
 
 ## 构造规则
 
-在这里东西变得稍微有趣了一些。对于 lambda 表达式，我们尝试这样做：
+在这里东西变得稍微有趣了一些。对于 lambda 表达式，我们尝试这样做。
 
 $$
 \cfrac{
@@ -81,6 +81,77 @@ $$
 
 **不行哦。**$\Gamma \vdash x \approx' y[a/b]$ 里面，$\Gamma$ 并不包含 $a$；如果我们想加入 $a$，则必须要得知它的类型；而我们不知道。更糟糕的是，这样一条规则也没办法处理 eta 转换：$f \approx \lambda x. f \, x$ 是无解的！
 
-在非类型层面上，我们需要引入**类型导向**的转换检查。我们定义关系 $A \approx'_* B : T$ 意为「在知晓 WHNF $A$ 和 $B$ 都有类型 $T$ 的情况下，对 $A$ 和 $B$ 进行转换检查」，并定义 $A \approx_* B : T$ 为将 $A$ 与 $B$ 化简到 WHNF 后进行 $\approx'_*$。另外，我们将 $A \approx' B$ 关系增强为 $A \approx' B : T$，意味着「对 $A$ 和 $B$ 进行转换检查并推导出它们共有的类型 $T$」，并相应地更新 $\approx$ 的定义。
+## 类型导向
+
+在非类型层面上，我们需要引入**类型导向**的转换检查。我们定义关系 $A \approx'_* B : T$ 意为「在知晓 WHNF $A$ 和 $B$ 都有类型 $T$ 的情况下，对 $A$ 和 $B$ 进行转换检查」，并定义 $A \approx_* B : T$ 为将 $A$ 与 $B$ 化简到 WHNF 后进行 $\approx'_*$。另外，我们将 $A \approx' B$ 关系增强为 $A \approx' B : T$，意味着「对 $A$ 和 $B$ 进行转换检查并推导出它们共有的类型 $T$」，并相应地更新 $\approx$ 的定义。这也就是说，$\approx$ 中的类型是**返回**的，而 $\approx_*$ 的类型是**传入**的。
+
+重新定义 $\approx'$ 的过程比较无聊，例如 Pi 类型的规则被重写为这样。
+
+$$
+\cfrac{
+  \Gamma \vdash A \approx A' : \mathcal U_m \qquad
+  \Gamma, x : A \vdash B \approx B'[x/y] : \mathcal U_n
+}{
+  \Gamma \vdash \Pi (x : A). B \approx' \Pi (y : A'). B' : \mathcal U_{m \sqcup n}
+}
+$$
+
+变量的规则被重写为这样。
+
+$$
+\cfrac{
+  \Gamma \ni a : A
+}{
+  \Gamma \vdash a \approx' a : A
+}
+$$
+
+而应用的规则稍微有趣一些，它被重写为下面这样。
+
+$$
+\cfrac{
+  \Gamma \vdash f \approx' f' : \Pi (y : A). B \qquad
+  \Gamma \vdash x \approx_* x' : A
+}{
+  \Gamma \vdash f \, x \approx' f' \, x' : B[x/y]
+}
+$$
+
+注意到：$\approx$ 与 $\approx_*$ 的交互就发生在对析构规则的处理中。现在我们来看更有趣的部分，即我们到底如何使用 $\approx_*$ 处理构造规则。
+
+$$
+\cfrac{
+  \Gamma, a : A \vdash f \, a \approx_* g \, a : B[a/x]
+}{
+  \Gamma \vdash f \approx'_* g : \Pi (x : A). B
+}
+$$
+
+我们没有直接检查 lambda 这一构造；我们只是利用了 $f$ 与 $g$ 均有 Pi 类型这一事实。我们应用一个新的变量作为参数，这直接处理了 eta 变换；一个变量 $f$ 应用参数后变成了 $f \, a$，一个带有若干层 lambda 的等价项 $\lambda x. (\lambda y. (\lambda z. f \, z) \, y) \, x$ 应用参数后也变成了 $f \, a$，问题解决。我们最后提供如何从 $\approx$ 降级到 $\approx_*$，即从**推断**降级为**检查**。
+
+$$
+\cfrac{
+  \Gamma \vdash A \approx B : T'
+}{
+  \Gamma \vdash A \approx_* B : T
+}
+$$
+
+> 注：这条规则还有另外一个版本。
+
+$$
+\cfrac{
+  \Gamma \vdash A \approx B : T' \qquad
+  \Gamma \vdash T \approx T' : N
+}{
+  \Gamma \vdash A \approx_* B : T
+}
+$$
+
+> 其中第二条前提理论上是冗余的，但我不知道这能不能更方便地解出类型中的元变量。
+
+# 元变量
+
+# 一般统合子
 
 <ArticleUnfinished />
