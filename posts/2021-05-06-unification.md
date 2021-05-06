@@ -47,8 +47,9 @@ $$
 
 $$
 \cfrac{
+  a = b
 }{
-  \Gamma \vdash a \approx' a
+  \Gamma \vdash a \approx' b
 }
 $$
 
@@ -100,9 +101,10 @@ $$
 
 $$
 \cfrac{
+  a = b \qquad
   \Gamma \ni a : A
 }{
-  \Gamma \vdash a \approx' a : A
+  \Gamma \vdash a \approx' b : A
 }
 $$
 
