@@ -18,22 +18,6 @@
     text-decoration: none;
 }
 
-.content h2 > .header-anchor::after {
-    content: '#';
-}
-.content h3 > .header-anchor::after {
-    content: '##';
-}
-.content h4 > .header-anchor::after {
-    content: '###';
-}
-.content h5 > .header-anchor::after {
-    content: '####';
-}
-.content h6 > .header-anchor::after {
-    content: '...#';
-}
-
 .content-metadata {
     font-size: .7em;
     color: gray;
@@ -45,7 +29,7 @@
 }
 
 .content {
-    line-height: 1.7em;
+    line-height: 1.8em;
 }
 
 .content ul,
@@ -86,30 +70,33 @@
 .content h4,
 .content h5,
 .content h6 {
-    font-family: Merriweather, KaTeX_Serif, han-songti;
-    font-weight: 700;
-    padding-top: 1em;
-    padding-bottom: .3em;
+    font-weight: bold;
+    font-variant-caps: petite-caps;
+    padding: 1.5em 0 0 0;
+    letter-spacing: .15em;
+}
+
+.content .header-anchor {
+    display: none;
 }
 
 .content h1 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .content h2 {
-    font-size: 1.5em
+    font-size: 1.3em;
 }
 .content h3 {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .content h4 {
     font-size: 1em;
 }
 .content h5 {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 .content h6 {
-    font-size: 0.8em;
-    color: gray;
+    font-size: 1em;
 }
 
 .content hr {
@@ -136,7 +123,9 @@
 
 .content pre,
 .content code {
-    font-family: preferred-mono, KaTeX_Typewriter, monospace;
+    font-family: preferred-mono, monospace;
+    font-variant-caps: normal;
+    letter-spacing: 0;
 }
 
 .content pre {
@@ -175,10 +164,6 @@
 
 .content td {
     border-bottom: 1px solid;
-}
-
-.content strong {
-    font-family: Merriweather, KaTeX_Main, han-heiti, sans-serif;
 }
 
 .content-footerlink {

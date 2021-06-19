@@ -1,8 +1,8 @@
 <template>
     <header>
-        <h1 class="header-title">
+        <div class="header-title">
             <a href="/">{{ title }}</a>
-        </h1>
+        </div>
         <div class="header-aside">
             <a class="dim-anchor" href="/about">about</a>
             <a class="dim-anchor" href="/post">posts</a>
@@ -15,13 +15,13 @@
     header {
         padding: 1em 0;
         border-bottom: solid 1px #ddd;
+        display: flex;
     }
     
     .header-title {
-        font-size: 3em;
-        line-height: 1em;
-        padding: 1em 0;
-        font-weight: 300;
+        flex-grow: 1;
+        font-size: 1.3em;
+        font-weight: bold;
     }
 
     .header-title a {

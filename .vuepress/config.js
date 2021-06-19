@@ -12,7 +12,7 @@ module.exports = {
         }],
         ['link', {
             rel: 'stylesheet',
-            href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300;1,700&display=swap",
+            href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap",
         }],
     ],
     plugins: [

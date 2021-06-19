@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <a class="dim-anchor" href="/about.html#copy">&copy; xy 2019 - {{ new Date().getFullYear() }}</a>
+        <a class="dim-anchor" href="/about.html#copy">&copy; daylily 2019 - {{ new Date().getFullYear() }}</a>
     </div>
 </template>
 
