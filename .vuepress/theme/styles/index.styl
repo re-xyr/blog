@@ -18,25 +18,27 @@
 }
 a {
   color: inherit;
-  text-decoration: none;
 }
 .layout {
   color: #222;
-  font-family: Merriweather, KaTeX_Main, serif;
+  font-family: "Source Serif Pro", "Noto Serif SC", KaTeX_Main, serif;
   padding: 0 3em;
   margin: 3em auto;
-  max-width: 1024px;
-  line-height: 1.6em;
+  max-width: 768px;
+  line-height: 1.7em;
   background-color: white;
-  font-size: 17px;
-  font-weight: 300;
+  font-size: 18px;
+  text-rendering: geometricPrecision;
+  font-kerning: normal;
 }
 .dim-anchor {
   color: gray;
-  text-decoration: none;
+  text-decoration: 1px underline #8883;
+  transition: .2s;
 }
 .dim-anchor:hover {
   color: black;
+  text-decoration-color: black;
 }
 main {
   padding-top: 1em;
@@ -46,4 +48,7 @@ main {
       padding: 0 1em;
       margin: 1em auto;
   }
+}
+.katex {
+  font-size: 1em !important;
 }

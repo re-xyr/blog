@@ -14,7 +14,6 @@
 <style scoped>
     header {
         padding: 1em 0;
-        border-bottom: solid 1px #ddd;
         display: flex;
     }
     

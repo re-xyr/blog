@@ -11,8 +11,20 @@ module.exports = {
             crossorigin: "anonymous",
         }],
         ['link', {
+            rel: 'preconnect',
+            href: "https://fonts.googleapis.com",
+        }],
+        ['link', {
+            rel: 'preconnect',
+            href: "https://fonts.gstatic.com",
+        }],
+        ['link', {
             rel: 'stylesheet',
-            href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap",
+            href: "https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap",
+        }],
+        ['link', {
+            rel: 'stylesheet',
+            href: "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap",
         }],
     ],
     plugins: [
@@ -47,7 +59,7 @@ module.exports = {
                     src
                         .replace(/(?<=[^\\])\$\$([^]+?)\$\$/mg, (_, str) =>
                             Katex.renderToString(str, { throwOnError: false, displayMode: true, output: 'html' }))
-                        .replace(/(?<=[^\\])\$([^]+?)\$/mg, (_, str) =>
+                        .replace(/(?<=[^\\])\$(\S|\S[^]*?\S)\$/mg, (_, str) =>
                             Katex.renderToString(str, { throwOnError: false, displayMode: false, output: 'html' })),
                     env)
                     .replace(/\\\$/g, '$')

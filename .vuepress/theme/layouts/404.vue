@@ -15,6 +15,9 @@
     word-wrap: break-word;
     line-height: 0.6em;
   }
+  a {
+    text-decoration: underline;
+  }
 </style>
 
 <script>

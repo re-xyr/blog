@@ -28,10 +28,6 @@
     margin-right: .3em;
 }
 
-.content {
-    line-height: 1.8em;
-}
-
 .content ul,
 .content ol {
     padding-left: 30px;
@@ -71,32 +67,53 @@
 .content h5,
 .content h6 {
     font-weight: bold;
-    font-variant-caps: petite-caps;
-    padding: 1.5em 0 0 0;
-    letter-spacing: .15em;
+    margin: 2em 0 0 0;
+    letter-spacing: .1em;
 }
 
 .content .header-anchor {
     display: none;
 }
 
+.content *:hover>.header-anchor {
+    animation: 1s display-delay;
+    display: initial;
+    float: right;
+    color: gray;
+    transition: .2s;
+}
+
+.content *:hover>.header-anchor:hover {
+    color: black !important;
+    text-decoration: none;
+}
+
 .content h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
+    border-top: 1px #ccc solid;
+    padding-top: .5em;
+    text-transform: none;
+    font-variant: small-caps;
 }
 .content h2 {
     font-size: 1.3em;
+    font-variant: small-caps;
 }
 .content h3 {
-    font-size: 1.1em;
+    font-size: .9em;
 }
 .content h4 {
-    font-size: 1em;
+    font-size: .9em;
+    color: gray;
 }
 .content h5 {
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: normal;
 }
 .content h6 {
-    font-size: 1em;
+    font-size: .9em;
+    font-weight: normal;
+    color: gray;
 }
 
 .content hr {
@@ -114,11 +131,16 @@
 
 .content a {
     color: #005;
+    text-decoration: 1px underline #0053;
     transition: .2s;
 }
-.content a:visited { color: #305; }
+.content a:visited {
+    color: #305;
+    text-decoration-color: #3053;
+}
 .content a:hover {
     color: #f00;
+    text-decoration-color: #f00;
 }
 
 .content pre,
@@ -144,6 +166,8 @@
 .content blockquote {
     margin: 1.5em;
     padding: .2em 1em;
+    font-size: 0.9em;
+    line-height: 1.8em;
     border-left: 4px solid #aaa;
     color: gray;
 }
@@ -159,22 +183,11 @@
 }
 
 .content th {
-    border-bottom: 3px double;
+    border-bottom: 1px solid gray;
 }
 
 .content td {
-    border-bottom: 1px solid;
-}
-
-.content-footerlink {
-    padding-right: .5em;
-}
-
-.license {
-    text-align: center;
-}
-.license a {
-    color: gray !important;
+    border-bottom: 1px solid #ddd;
 }
 </style>
 
