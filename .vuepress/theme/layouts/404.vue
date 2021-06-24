@@ -1,5 +1,5 @@
 <template>
-  <div class="layout explode" :style="{ fontFamily: randomFont() }">
+  <div class="layout explode">
     You are experiencing a <span style="font-weight: bold; color: #C40233">{{ fourOhFour() }}<span style="font-size: 0.5em">{{ realBase() }}</span></span> error.
     <br />
     Don't panic. <a style="color: #0087BD" href="/">Take me home.</a>
@@ -42,9 +42,6 @@ export default {
         : (this.base === 0
           ? this.rome
           : (404).toString(this.base).toUpperCase())
-    },
-    randomFont() {
-      return ['Main', 'SansSerif', 'Typewriter'].map(x => 'KaTeX_' + x)[Math.round(Math.random() * 6)]
     },
   }
 }

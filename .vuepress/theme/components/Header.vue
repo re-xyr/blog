@@ -4,9 +4,9 @@
             <a href="/">{{ title }}</a>
         </div>
         <div class="header-aside">
-            <a class="dim-anchor" href="/about">about</a>
-            <a class="dim-anchor" href="/post">posts</a>
-            <a class="dim-anchor" href="/category">categories</a>
+            <template v-for="(x, ix) in $site.themeConfig.nav">
+                <a :key="ix" :href="x.link" class="dim-anchor">{{ x.text }}</a>
+            </template>
         </div>
     </header>
 </template>
@@ -27,8 +27,8 @@
         text-decoration: none;
     }
 
-    .header-aside {
-        text-align: right;
+    .dim-anchor {
+        margin-right: .3em;
     }
 </style>
 

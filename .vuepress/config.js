@@ -7,50 +7,26 @@ module.exports = {
     head: [
         ['link', {
             rel: 'stylesheet',
-            href: "https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css",
+            href: "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css",
             crossorigin: "anonymous",
         }],
-        ['link', {
-            rel: 'preconnect',
-            href: "https://fonts.googleapis.com",
-        }],
-        ['link', {
-            rel: 'preconnect',
-            href: "https://fonts.gstatic.com",
-        }],
-        ['link', {
-            rel: 'stylesheet',
-            href: "https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap",
-        }],
-        ['link', {
-            rel: 'stylesheet',
-            href: "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap",
-        }],
     ],
-    plugins: [
-        [
-            '@vuepress/blog', {
-                directories: [
-                    {
-                        id: 'Post',
-                        dirname: 'posts',
-                        path: '/post/',
-                    },
-                ], frontmatters: [
-                    {
-                        id: 'Category',
-                        keys: ['category'],
-                        path: '/category/',
-                        layout: 'FrontmatterIndex',
-                    },
-                ], globalPagination: {
-                    lengthPerPage: 10,
-                }, feed: {
-                    canonical_base: 'http://xn--i2r.xn--rhqv96g/',
-                },
-            },
+    theme: 'vuepress-theme-chronicle',
+    themeConfig: {
+        nav: [
+            { text: 'about', link: '/about' },
+            { text: 'post', link: '/post' },
+            { text: 'categories', link: '/category' },
         ],
-    ],
+        copy: {
+            name: 'daylily',
+            link: '/about.html#copy',
+            beginYear: '2019',
+        },
+        feed: {
+            canonical_base: 'https://xn--i2r.xn--rhqv96g/',
+        },
+    },
     markdown: {
         extendMarkdown(md) {
             md.render = (src, env) =>

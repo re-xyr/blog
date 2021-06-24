@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <a class="dim-anchor" href="/about.html#copy">&copy; daylily 2019 - {{ new Date().getFullYear() }}</a>
+        <a class="dim-anchor" :href="$site.themeConfig.copy.link">&copy; {{ $site.themeConfig.copy.name }} {{ $site.themeConfig.copy.beginYear }} – {{ new Date().getFullYear() }}</a>
     </div>
 </template>
 
