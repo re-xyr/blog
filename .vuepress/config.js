@@ -13,6 +13,7 @@ module.exports = {
     ],
     theme: 'vuepress-theme-chronicle',
     themeConfig: {
+        root: '/post/',
         nav: [
             { text: 'about', link: '/about' },
             { text: 'post', link: '/post' },
