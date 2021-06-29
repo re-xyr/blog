@@ -30,12 +30,12 @@ To use Chronicle to create a blog site, first create a vuepress site with the fo
 
 ```
 /
-  .vuepress/
-    public/
-    config.js
-  posts/
-    2021-06-24-my-first-post.md
-    ...
+├ .vuepress/
+│  ├ public/
+│  └ config.js
+└ posts/
+   ├ 2021-06-24-my-first-post.md
+   ├ ...
 ```
 
 Edit the `config.js` to contain the following content. You can also include other configuration items from the [vuepress documentation](https://vuepress.vuejs.org/config/#basic-config).
@@ -109,12 +109,12 @@ Vuepress 是一个强大的静态页面生成器，而 [vuepress-blog-plugin](ht
 
 ```
 /
-  .vuepress/
-    public/
-    config.js
-  posts/
-    2021-06-24-my-first-post.md
-    ...
+├ .vuepress/
+│  ├ public/
+│  └ config.js
+└ posts/
+   ├ 2021-06-24-my-first-post.md
+   ├ ...
 ```
 
 接着把下面的内容写进 `.vuepress/config.js`。你也可以加入其他 [vuepress 文档](https://vuepress.vuejs.org/config/#basic-config)中的元素。

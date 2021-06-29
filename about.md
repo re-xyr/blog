@@ -22,7 +22,7 @@ notPost: true
 - [rss](/rss.xml) / [atom](/feed.atom) / [json feed](/feed.json)
 
 ## src.
-- no. sorry.
+- theme [chronicle](https://github.com/re-xyr/vuepress-theme-chronicle)
 
 ## misc.
 - style inspired by [agaric](https://b.agaric.net), [Tesla Ice Zhang](https://ice1000.org) and [Belleve Invis](https://typeof.net)
