@@ -21,6 +21,7 @@
   "devDependencies": {
     "@vuepress/plugin-blog": "^1.9.4",
     "katex": "^0.13.11",
+    "markdown-it-footnote": "^3.0.3",
     "prismjs": "^1.23.0",
     "vuepress": "1.5.2",
     "vuepress-theme-chronicle": "^1.0.0"

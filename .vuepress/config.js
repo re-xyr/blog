@@ -30,6 +30,7 @@ module.exports = {
     },
     markdown: {
         extendMarkdown(md) {
+            md.use(require('markdown-it-footnote'))
             md.render = (src, env) =>
                 MarkdownIt.prototype.render.call(
                     md,
